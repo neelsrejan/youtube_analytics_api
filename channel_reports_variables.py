@@ -1,4 +1,4 @@
-countries = {
+countries_dict = {
     "Andorra": "AD", 
     "United Arab Emirates": "AE", 
     "Afghanistan": "AF", 
@@ -250,7 +250,7 @@ countries = {
     "Zimbabwe": "ZW"
 }
 
-continents = {
+continents_dict = {
     "Africa": "002",
     "Americas":"019",
     "Asia": "142",
@@ -258,7 +258,7 @@ continents = {
     "Oceania": "009"
 }
 
-subcontinents = {
+subcontinents_dict = {
     "Eastern Africa": "014",
     "Middle Africa": "017",
     "Northern Africa": "015",
@@ -283,7 +283,7 @@ subcontinents = {
     "Polynesia": "061"
 }
 
-provinces = {
+provinces_dict = {
     "Alabama": "US-AL", 
     "Alaska": "US-AK", 
     "Arizona": "US-AZ", 
