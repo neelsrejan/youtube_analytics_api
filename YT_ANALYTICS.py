@@ -17,13 +17,12 @@ class YT_ANALYTICS(Channel_Reports, Filters):
         self.API_VERSION = "v2"
         self.CLIENT_SECRETS_FILE = os.path.join(os.getcwd(), "secrets.json")
         super()
+        self.channel_name = None
         self.num_vids = None
         self.vid_ids = []
         self.playlist_ids = []
         self.start_date = None
         self.end_date = None
-        self.has_groups = False
-        self.groups = []
         self.has_countries = False
         self.countries = []
         self.has_continents = False
@@ -32,15 +31,20 @@ class YT_ANALYTICS(Channel_Reports, Filters):
         self.subcontinents = []
         self.has_provinces = False
         self.provinces = []
+        self.youtubeAnalytics = None
+        self.has_groups = False
+        self.groups = []
+
         
     def get_filter_info(self):
+        self.get_channel_name()
         self.get_num_vids()
         self.get_vid_ids()
         self.get_playlist_ids()
         self.ask_dates()
-        self.get_groups()
         self.ask_countries()
         self.ask_continents()
         self.ask_subcontinents()
         self.ask_provinces()
-
+        self.auth()
+        self.get_groups()

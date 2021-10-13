@@ -1,10 +1,16 @@
 
 import json
 import requests
+from datetime import datetime, date
 from channel_reports_variables import countries_dict, continents_dict, subcontinents_dict, provinces_dict
 
 class Filters():
-    
+
+    def get_channel_name(self):
+        url = f"https://www.googleapis.com/youtube/v3/activities?part=snippet&channelId={self.channel_id}&key={self.API_KEY}"
+        self.channel_name = json.loads(requests.get(url).text)["items"][0]["snippet"]["channelTitle"].replace(" ", "_")
+        return
+
     def get_num_vids(self):
         url = f"https://www.googleapis.com/youtube/v3/channels?part=statistics&id={self.channel_id}&key={self.API_KEY}"
         self.num_vids = int(json.loads(requests.get(url).text)["items"][0]["statistics"]["videoCount"])
@@ -145,7 +151,6 @@ class Filters():
             url = f"https://www.googleapis.com/youtube/v3/channels?part=snippet&id={self.channel_id}&key={self.API_KEY}"
             self.start_date = json.loads(requests.get(url).text)["items"][0]["snippet"]["publishedAt"][:10]
         else:
-            self.start_date = input("What is the start date you wish to filter ions=f"{filters_1[i] + ',' + filters_2[j]}",
-            rom, start date should be before the end date. Type the date in yyyy-mm-dd format. ").strip()
-            self.end_date = input("What is the end date you wish to filter to, end date should be after the start date. Type the date in yyyy-mm-dd format. ").strip()
+            self.start_date = input(f"What is the start date you wish to filter from, the start date should be before the end date. Type the date in yyyy-mm-dd format. ").strip()
+            self.end_date = input("What is the end date you wish to filter to, the end date should be after the start date. Type the date in yyyy-mm-dd format. ").strip()
         return
