@@ -14,16 +14,6 @@ def main():
 
     YT = YT_ANALYTICS(API_KEY, channel_id)
     YT.get_filter_info()
-    print(YT.num_vids)
-    print(YT.vid_ids)
-    print(YT.playlist_ids)
-    print(YT.start_date)
-    print(YT.end_date)
-    print(YT.groups, YT.has_groups)
-    print(YT.countries, YT.has_countries)
-    print(YT.continents, YT.has_continents)
-    print(YT.subcontinents, YT.has_subcontinents)
-    print(YT.provinces, YT.has_provinces)
 
     # Create directories for saving data into
     if not os.path.exists(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}")):
@@ -38,7 +28,8 @@ def main():
 
             os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}", "playlist_reports", "excel", f"{category}"))
 
-    YT.basic_user_activity_statistics()
+    #YT.basic_user_activity_statistics()
+    YT.basic_user_activity_US()
 
 if __name__ == "__main__":
     main()

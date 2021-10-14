@@ -1,8 +1,9 @@
 import os
-from channel_reports import Channel_Reports
 from channel_reports_filters import Filters
+from basic_user_activity_statistics import Basic_User_Activity_Statistics
+from basic_user_activity_US import Basic_User_Activity_US
 
-class YT_ANALYTICS(Channel_Reports, Filters):
+class YT_ANALYTICS(Filters, Basic_User_Activity_Statistics, Basic_User_Activity_US):
 
     def __init__(self, API_KEY, channel_id):
         self.API_KEY = API_KEY
