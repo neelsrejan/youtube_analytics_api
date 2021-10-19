@@ -2,8 +2,20 @@ import os
 from channel_reports_filters import Filters
 from basic_user_activity_statistics import Basic_User_Activity_Statistics
 from basic_user_activity_US import Basic_User_Activity_US
+from user_activity_by_location_over_time import User_Activity_By_Location_Over_Time
+from user_activity_in_US_over_time import User_Activity_In_US_Over_Time
+from user_activity_by_location import User_Activity_By_Location
+from user_activity_in_US import User_Activity_In_US
+from user_activity_by_location_over_subscribed_status import User_Activity_By_Location_Over_Subscribed_Status
+from user_activity_in_US_over_subscribed_status import User_Activity_In_US_Over_Subscribed_Status
+from playback_details_by_location_over_liveOrOnDemand import Playback_Details_By_Location_Over_LiveOrOnDemand
+from playback_details_by_location_over_time import Playback_Details_By_Location_Over_Time
+from playback_details_by_country import Playback_Details_By_Country
+from playback_details_by_country_averageViewPercentage import Playback_Details_By_Country_AverageViewPercentage
+from playback_details_in_US import Playback_Details_In_US
+from playback_details_in_US_averageViewPercentage import Playback_Details_In_US_AverageViewPercentage
 
-class YT_ANALYTICS(Filters, Basic_User_Activity_Statistics, Basic_User_Activity_US):
+class YT_ANALYTICS(Filters, Basic_User_Activity_Statistics, Basic_User_Activity_US, User_Activity_By_Location_Over_Time, User_Activity_In_US_Over_Time, User_Activity_By_Location, User_Activity_In_US, User_Activity_By_Location_Over_Subscribed_Status, User_Activity_In_US_Over_Subscribed_Status, Playback_Details_By_Location_Over_LiveOrOnDemand, Playback_Details_By_Location_Over_Time, Playback_Details_By_Country, Playback_Details_By_Country_AverageViewPercentage, Playback_Details_In_US, Playback_Details_In_US_AverageViewPercentage):
 
     def __init__(self, API_KEY, channel_id):
         self.API_KEY = API_KEY
@@ -43,9 +55,17 @@ class YT_ANALYTICS(Filters, Basic_User_Activity_Statistics, Basic_User_Activity_
         self.get_vid_ids()
         self.get_playlist_ids()
         self.ask_dates()
-        self.ask_countries()
-        self.ask_continents()
-        self.ask_subcontinents()
-        self.ask_provinces()
+        #self.ask_countries()
+        #self.ask_continents()
+        #self.ask_subcontinents()
+        #self.ask_provinces()
+        self.has_countries = True
+        self.countries = ["US", "GB", "IN"]
+        self.has_continents = True
+        self.continents = ["019", "142", "150"]
+        self.has_subcontinents = True
+        self.subcontinents = ["021", "005", "151", "035"]
+        self.has_provinces = True
+        self.provinces = ["US-CA", "US-TX", "US-NY"]
         self.auth()
         self.get_groups()

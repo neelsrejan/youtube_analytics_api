@@ -17,7 +17,7 @@ def main():
 
     # Create directories for saving data into
     if not os.path.exists(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}")):
-        data_categories_video = ["basic_user_activity_statistics", "basic_user_activity_US", "user_acvitity_by_location_over_time", "user_activity_in_US_over_time", "user_activity_by_location", "user_activity_in_US", "user_activity_by_location_over_subscribed_status", "user_activty_in_US_over_subscribed_status", "playback_details_by_location_over_liveOrOnDemand", "playback_details_by_location_over_time", "playback_details_by_country", "playback_details_by_country_w/averageViewPercentage", "playback_details_in_US", "playback_details_in_US_w/aveageViewPercemtage", "video_playback_by_location", "playback_location_details", "traffic_source", "traffic_source_details", "device_type", "operating_system", "operating_system_and_device_type", "viewer_demographics", "engagement_and_content_sharing", "audience_retention", "top_videos", "top_views_in_US", "top_videos_by_subscriber_type", "top_videos_by_yt_product", "top_videos_by_playback_details"]
+        data_categories_video = ["basic_user_activity_statistics", "basic_user_activity_US", "user_activity_by_location_over_time", "user_activity_in_US_over_time", "user_activity_by_location", "user_activity_in_US", "user_activity_by_location_over_subscribed_status", "user_activity_in_US_over_subscribed_status", "playback_details_by_location_over_liveOrOnDemand", "playback_details_by_location_over_time", "playback_details_by_country", "playback_details_by_country_averageViewPercentage", "playback_details_in_US", "playback_details_in_US_averageViewPercentage", "video_playback_by_location", "playback_location_details", "traffic_source", "traffic_source_details", "device_type", "operating_system", "operating_system_and_device_type", "viewer_demographics", "engagement_and_content_sharing", "audience_retention", "top_videos", "top_views_in_US", "top_videos_by_subscriber_type", "top_videos_by_yt_product", "top_videos_by_playback_details"]
         data_categories_playlist = ["basic_stats", "time_based", "playlist_activity_by_location", "playlist_activity_in_US", "playback_locations", "playback_locations_details", "traffic_sources", "traffic_sources_details", "device_type", "operating_system", "operating_system_and_device_type", "viewer_demographics", "top_playlists"]
         for category in data_categories_video:
             os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}", "video_reports", "csv", f"{category}"))
@@ -28,8 +28,20 @@ def main():
 
             os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}", "playlist_reports", "excel", f"{category}"))
 
-    #YT.basic_user_activity_statistics()
+    YT.basic_user_activity_statistics()
     YT.basic_user_activity_US()
+    YT.user_activity_by_location_over_time()
+    YT.user_activity_in_US_over_time()
+    YT.user_activity_by_location()
+    YT.user_activity_in_US()
+    YT.user_activity_by_location_over_subscribed_status()
+    YT.user_activity_in_US_over_subscribed_status()
+    YT.playback_details_by_location_over_liveOrOnDemand()
+    YT.playback_details_by_location_over_time()
+    YT.playback_details_by_country()
+    YT.playback_details_by_country_averageViewPercentage()
+    YT.playback_details_in_US()
+    YT.playback_details_in_US_averageViewPercentage()
 
 if __name__ == "__main__":
     main()

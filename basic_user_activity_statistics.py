@@ -58,11 +58,11 @@ class Basic_User_Activity_Statistics(Auth):
                             ) 
                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
                             if len(response["rows"]) != 0:
-                                for vid_row in response["rows"]:
-                                    data.append(vid_row)
+                                for row in response["rows"]:
+                                    data.append(row)
                         response_df = pd.DataFrame(data=data, columns=col_names)
-                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"filters={filters_1[i] + ',' + filters_2[j]}.csv"), index=False)
-                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"filters={filters_1[i] + ',' + filters_2[j]}.xlsx"), index=False)
+                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"{filters_1[i]},{filters_2[j]}.csv"), index=False)
+                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
                     elif filters_1[i] == "country" and filters_2[j] == "group":
                         data = []
                         col_names = None
@@ -78,11 +78,11 @@ class Basic_User_Activity_Statistics(Auth):
                             )
                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
                             if len(response["rows"]) != 0:
-                                for vid_row in response["rows"]:
-                                    data.append(vid_row)
+                                for row in response["rows"]:
+                                    data.append(row)
                         response_df = pd.DataFrame(data=data, columns=col_names)
-                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"filters={filters_1[i] + ',' + filters_2[j]}.csv"), index=False)
-                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"filters={filters_1[i] + ',' + filters_2[j]}.xlsx"), index=False)
+                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"{filters_1[i]},{filters_2[j]}.csv"), index=False)
+                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
                     elif filters_1[i] == "continent" and filters_2[j] == "video":
                         data = []
                         col_names = None
@@ -97,14 +97,14 @@ class Basic_User_Activity_Statistics(Auth):
                                     startDate=f"{self.start_date}"
                             )
                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                            col_names.insert(1, filters_1[i])
+                            col_names.insert(1, f"{filters_1[i]}")
                             if len(response["rows"]) != 0:
-                                for vid_row in response["rows"]:
-                                    vid_row.insert(1, continent)
-                                    data.append(vid_row)
+                                for row in response["rows"]:
+                                    row.insert(1, f"{continent}")
+                                    data.append(row)
                         response_df = pd.DataFrame(data=data, columns=col_names)
-                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"filters={filters_1[i] + ',' + filters_2[j]}.csv"), index=False)
-                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"filters={filters_1[i] + ',' + filters_2[j]}.xlsx"), index=False)
+                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"{filters_1[i]},{filters_2[j]}.csv"), index=False)
+                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
                     elif filters_1[i] == "continent" and filters_2[j] == "group":
                         data = []
                         col_names = None
@@ -119,14 +119,14 @@ class Basic_User_Activity_Statistics(Auth):
                                     startDate=f"{self.start_date}"
                             )
                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                            col_names.insert(1, filters_1[i])
+                            col_names.insert(1, f"{filters_1[i]}")
                             if len(response["rows"]) != 0:
-                                for vid_row in response["rows"]:
-                                    vid_row.insert(1, continent)
-                                    data.append(vid_row)
+                                for row in response["rows"]:
+                                    row.insert(1, f"{continent}")
+                                    data.append(row)
                         response_df = pd.DataFrame(data=data, columns=col_names)
-                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"filters={filters_1[i] + ',' + filters_2[j]}.csv"), index=False)
-                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"filters={filters_1[i] + ',' + filters_2[j]}.xlsx"), index=False)
+                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"{filters_1[i]},{filters_2[j]}.csv"), index=False)
+                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
                     elif filters_1[i] == "subContinent" and filters_2[j] == "video":
                         data = []
                         col_names = None
@@ -141,14 +141,14 @@ class Basic_User_Activity_Statistics(Auth):
                                     startDate=f"{self.start_date}"
                             )
                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                            col_names.insert(1, filters_1[i])
+                            col_names.insert(1, f"{filters_1[i]}")
                             if len(response["rows"]) != 0:
-                                for vid_row in response["rows"]:
-                                    vid_row.insert(1, subcontinent)
-                                    data.append(vid_row)
+                                for row in response["rows"]:
+                                    row.insert(1, f"{subcontinent}")
+                                    data.append(row)
                         response_df = pd.DataFrame(data=data, columns=col_names)
-                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"filters={filters_1[i] + ',' + filters_2[j]}.csv"), index=False)
-                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"filters={filters_1[i] + ',' + filters_2[j]}.xlsx"), index=False)
+                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"{filters_1[i]},{filters_2[j]}.csv"), index=False)
+                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
                     elif filters_1[i] == "subContinent" and filters_2[j] == "group":
                         data = []
                         col_names = None
@@ -163,16 +163,18 @@ class Basic_User_Activity_Statistics(Auth):
                                     startDate=f"{self.start_date}"
                             )
                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                            col_names.insert(1, filters_1[i])
+                            col_names.insert(1, f"{filters_1[i]}")
                             if len(response["rows"]) != 0:
-                                for vid_row in response["rows"]:
-                                    vid_row.insert(1, subcontinent)
-                                    data.append(vid_row)
+                                for row in response["rows"]:
+                                    row.insert(1, f"{subcontinent}")
+                                    data.append(row)
                         response_df = pd.DataFrame(data=data, columns=col_names)
-                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"filters={filters_1[i] + ',' + filters_2[j]}.csv"), index=False)
-                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"filters={filters_1[i] + ',' + filters_2[j]}.xlsx"), index=False)
+                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"{filters_1[i]},{filters_2[j]}.csv"), index=False)
+                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
                 elif i == 0 and j != 0:
                     if filters_2[j] == "video":
+                        data = []
+                        col_names = None
                         response = self.execute_api_request(
                             self.youtubeAnalytics.reports().query,
                                 dimensions=f"{filters_2[j]}",
@@ -183,11 +185,15 @@ class Basic_User_Activity_Statistics(Auth):
                                 startDate=f"{self.start_date}"
                         )
                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                        data = response["rows"]
+                        if len(response["rows"]) != 0:
+                            for row in response["rows"]:
+                                data.append(row)
                         response_df = pd.DataFrame(data=data, columns=col_names)
-                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"filters={filters_2[j]}.csv"), index=False)
-                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"filters={filters_2[j]}.xlsx"), index=False)
+                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"{filters_2[j]}.csv"), index=False)
+                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"{filters_2[j]}.xlsx"), index=False)
                     elif filters_2[j] == "group":
+                        data = []
+                        col_names = None
                         response = self.execute_api_request(
                              self.youtubeAnalytics.reports().query,
                                 dimensions=f"{filters_2[j]}",
@@ -195,13 +201,15 @@ class Basic_User_Activity_Statistics(Auth):
                                 filters=f"{filters_2[j]}=={','.join(self.groups)}",
                                 ids="channel==MINE",
                                  metrics=f"{','.join(metrics)}",
-                                startDate=f"{start_date}"
+                                startDate=f"{self.start_date}"
                         )
                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                        data = response["rows"]
+                        if len(response["rows"]) != 0:
+                            for row in response["rows"]:
+                                data.append(row)
                         response_df = pd.DataFrame(data=data, columns=col_names)
-                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"filters={filters_2[j]}.csv"), index=False)
-                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"filters={filters_2[j]}.xlsx"), index=False)
+                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"{filters_2[j]}.csv"), index=False)
+                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"{filters_2[j]}.xlsx"), index=False)
                 elif i != 0 and j == 0:
                     if filters_1[i] == "country":
                         data = []
@@ -218,10 +226,11 @@ class Basic_User_Activity_Statistics(Auth):
                             )
                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
                             if len(response["rows"]) != 0:
-                                data.append(response["rows"][0])
+                                for row in response["rows"]:
+                                    data.append(row)
                         response_df = pd.DataFrame(data=data, columns=col_names)
-                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"filters={filters_1[i]}.csv"), index=False)
-                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"filters={filters_1[i]}.xlsx"), index=False)
+                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"{filters_1[i]}.csv"), index=False)
+                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"{filters_1[i]}.xlsx"), index=False)
                     elif filters_1[i] == "continent":
                         data = []
                         col_names = None
@@ -235,14 +244,14 @@ class Basic_User_Activity_Statistics(Auth):
                                     startDate=f"{self.start_date}"
                             )
                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                            col_names.insert(1, filters_1[i])
+                            col_names.insert(1, f"{filters_1[i]}")
                             if len(response["rows"]) != 0:
-                                curr_row = response["rows"][0]
-                                curr_row.insert(1, continent)
-                                data.append(curr_row)
+                                for row in response["rows"]:
+                                    row.insert(1, f"{continent}")
+                                    data.append(row)
                         response_df = pd.DataFrame(data=data, columns=col_names)
-                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"filters={filters_1[i]}.csv"), index=False)
-                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"filters={filters_1[i]}.xlsx"), index=False)
+                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"{filters_1[i]}.csv"), index=False)
+                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"{filters_1[i]}.xlsx"), index=False)
                     elif filters_1[i] == "subContinent":
                         data = []
                         col_names = None
@@ -256,12 +265,12 @@ class Basic_User_Activity_Statistics(Auth):
                                     startDate=f"{self.start_date}"
                             )
                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                            col_names.insert(1, filters_1[i])
+                            col_names.insert(1, f"{filters_1[i]}")
                             if len(response["rows"]) != 0:
-                                curr_row = response["rows"][0]
-                                curr_row.insert(1, subcontinent)
-                                data.append(curr_row)
+                                for row in response["rows"]:
+                                    row.insert(1, f"{subcontinent}")
+                                    data.append(row)
                         response_df = pd.DataFrame(data=data, columns=col_names)
-                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"filters={filters_1[i]}.csv"), index=False)
-                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"filters={filters_1[i]}.xlsx"), index=False)
+                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "basic_user_activity_statistics", f"{filters_1[i]}.csv"), index=False)
+                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "basic_user_activity_statistics", f"{filters_1[i]}.xlsx"), index=False)
         return

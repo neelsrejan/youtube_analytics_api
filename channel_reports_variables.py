@@ -335,11 +335,5 @@ provinces_dict = {
     "Wisconsin": "US-WI", 
     "Wyoming": "US-WY", 
     "District of Columbia": "US-DC", 
-    "American Samoa": "US-AS", 
-    "Guam": "US-GU", 
-    "Northern Marina Islands": "US-MP", 
-    "Puerto Rico": "US-PR", 
-    "United States Minor Outlying Islands": "US-UM", 
-    "United States Virgin Islands": "US-VI"
 }
 
