@@ -296,6 +296,5 @@ class User_Activity_By_Location_Over_Time(Auth):
                                         data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "user_activity_by_location_over_time", f"{dimension},{filters_1[i]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "user_activity_by_location_over_time", f"{dimension},{filters_1[i]}.xlsx"), index=False)
-        
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "user_activity_by_location_over_time", f"{dimension},{filters_1[i]}.xlsx"), index=False) 
         return

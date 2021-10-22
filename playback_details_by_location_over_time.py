@@ -2694,25 +2694,3 @@ class Playback_Details_By_Location_Over_Time(Auth):
                                     response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "playback_details_by_location_over_time", "unfiltered.xlsx"), index=False)
         return
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
