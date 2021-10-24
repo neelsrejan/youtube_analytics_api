@@ -13,26 +13,6 @@ class User_Activity_By_Location(Auth):
         metrics = ["views", "redViews", "comments", "likes", "dislikes", "videosAddedToPlaylists", "videosRemovedFromPlaylists", "shares", "estimatedMinutesWatched", "estimatedRedMinutesWatched", "averageViewDuration", "averageViewPercentage", "annotationClickThroughRate", "annotationCloseRate", "annotationImpressions", "annotationClickableImpressions", "annotationClosableImpressions", "annotationClicks", "annotationCloses", "cardClickRate", "cardTeaserClickRate", "cardImpressions", "cardTeaserImpressions", "cardClicks", "cardTeaserClicks", "subscribersGained", "subscribersLost"]
         dimensions = ["country"]
         
-        data = []
-        col_names = None
-        for dimension in dimensions:
-            response = self.execute_api_request(
-                self.youtubeAnalytics.reports().query,
-                    dimensions=f"{dimension}",
-                    endDate=f"{self.end_date}",
-                    ids="channel==MINE",
-                    metrics=f"{','.join(metrics)}",
-                    startDate=f"{self.start_date}"
-            )
-            col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-            if len(response["rows"]) != 0:
-                for row in response["rows"]:
-                    data.append(row)
-            response_df = pd.DataFrame(data=data, columns=col_names)
-            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "user_activity_by_location_over_time", f"{dimension}.csv"), index=False)
-            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "user_activity_by_location_over_time", f"{dimension}.xlsx"), index=False)
-            data.clear()
-
         filters_to_remove_1 = []
         filters_to_remove_2 = []
         if not self.has_continents:
@@ -61,7 +41,7 @@ class User_Activity_By_Location(Auth):
                                 for continent in self.continents:
                                     response = self.execute_api_request(
                                         self.youtubeAnalytics.reports().query,
-                                            dimensions=f"{dimension + ',' + filters_2[j]}",
+                                            dimensions=f"{dimension},{filters_2[j]}",
                                             endDate=f"{self.end_date}",
                                             filters=f"{filters_1[i]}=={continent};{filters_2[j]}=={','.join(self.vid_ids)}",
                                             ids="channel==MINE",
@@ -81,7 +61,7 @@ class User_Activity_By_Location(Auth):
                                 for continent in self.continents:
                                     response = self.execute_api_request(
                                         self.youtubeAnalytics.reports().query,
-                                            dimensions=f"{dimension + ',' + filters_2[j]}",
+                                            dimensions=f"{dimension},{filters_2[j]}",
                                             endDate=f"{self.end_date}",
                                             filters=f"{filters_1[i]}=={continent};{filters_2[j]}=={','.join(self.groups)}",
                                             ids="channel==MINE",
@@ -102,7 +82,7 @@ class User_Activity_By_Location(Auth):
                                 for subcontinent in self.subcontinents:
                                     response = self.execute_api_request(
                                         self.youtubeAnalytics.reports().query,
-                                            dimensions=f"{dimension + ',' + filters_2[j]}",
+                                            dimensions=f"{dimension},{filters_2[j]}",
                                             endDate=f"{self.end_date}",
                                             filters=f"{filters_1[i]}=={subcontinent};{filters_2[j]}=={','.join(self.vid_ids)}",
                                             ids="channel==MINE",
@@ -122,7 +102,7 @@ class User_Activity_By_Location(Auth):
                                 for subcontinent in self.subcontinents:
                                     response = self.execute_api_request(
                                         self.youtubeAnalytics.reports().query,
-                                            dimensions=f"{dimension + ',' + filters_2[j]}",
+                                            dimensions=f"{dimension},{filters_2[j]}",
                                             endDate=f"{self.end_date}",
                                             filters=f"{filters_1[i]}=={subcontinent};{filters_2[j]}=={','.join(self.groups)}",
                                             ids="channel==MINE",
@@ -136,45 +116,6 @@ class User_Activity_By_Location(Auth):
                                 response_df = pd.DataFrame(data=data, columns=col_names)
                                 response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "user_activity_by_location", f"{dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
                                 response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "user_activity_by_location", f"{dimension},{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
-                    elif i == 0 and j != 0:
-                        if filters_2[j] == "video":
-                            data = []
-                            col_names = None
-                            response = self.execute_api_request(
-                                self.youtubeAnalytics.reports().query,
-                                    dimensions=f"{dimension + ',' + filters_2[j]}",
-                                    endDate=f"{self.end_date}",
-                                    filters=f"{filters_2[j]}=={','.join(self.vid_ids)}",
-                                    ids="channel==MINE",
-                                    metrics=f"{','.join(metrics)}",
-                                    startDate=f"{self.start_date}"
-                            )
-                            col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                            if len(response["rows"]) != 0:
-                                for row in response["rows"]:
-                                    data.append(row)
-                            response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "user_activity_by_location", f"{dimension},{filters_2[j]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "user_activity_by_location", f"{dimension},{filters_2[j]}.xlsx"), index=False)
-                        elif filters_2[j] == "group":
-                            data = []
-                            col_names = None
-                            response = self.execute_api_request(
-                                self.youtubeAnalytics.reports().query,
-                                    dimensions=f"{dimension + ',' + filters_2[j]}",
-                                    endDate=f"{self.end_date}",
-                                    filters=f"{filters_2[j]}=={','.join(self.groups)}",
-                                    ids="channel==MINE",
-                                    metrics=f"{','.join(metrics)}",
-                                    startDate=f"{self.start_date}"
-                            )
-                            col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                            if len(response["rows"]) != 0:
-                                for row in response["rows"]:
-                                    data.append(row)
-                            response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "user_activity_by_location", f"{dimension},{filters_2[j]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "user_activity_by_location", f"{dimension},{filters_2[j]}.xlsx"), index=False)
                     elif i != 0 and j == 0:
                         if filters_1[i] == "continent":
                             data = []
@@ -182,6 +123,7 @@ class User_Activity_By_Location(Auth):
                             for continent in self.continents:
                                 response = self.execute_api_request(
                                     self.youtubeAnalytics.reports().query,
+                                        dimensions=f"{dimension}",
                                         endDate=f"{self.end_date}",
                                         filters=f"{filters_1[i]}=={continent}",
                                         ids="channel==MINE",
@@ -203,6 +145,7 @@ class User_Activity_By_Location(Auth):
                             for subcontinent in self.subcontinents:
                                 response = self.execute_api_request(
                                     self.youtubeAnalytics.reports().query,
+                                        dimensions=f"{dimension}",
                                         endDate=f"{self.end_date}",
                                         filters=f"{filters_1[i]}=={subcontinent}",
                                         ids="channel==MINE",
@@ -218,4 +161,61 @@ class User_Activity_By_Location(Auth):
                             response_df = pd.DataFrame(data=data, columns=col_names)
                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "user_activity_by_location", f"{dimension},{filters_1[i]}.csv"), index=False)
                             response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "user_activity_by_location", f"{dimension},{filters_1[i]}.xlsx"), index=False)
+                    elif i == 0 and j != 0:
+                        if filters_2[j] == "video":
+                            data = []
+                            col_names = None
+                            response = self.execute_api_request(
+                                self.youtubeAnalytics.reports().query,
+                                    dimensions=f"{dimension},{filters_2[j]}",
+                                    endDate=f"{self.end_date}",
+                                    filters=f"{filters_2[j]}=={','.join(self.vid_ids)}",
+                                    ids="channel==MINE",
+                                    metrics=f"{','.join(metrics)}",
+                                    startDate=f"{self.start_date}"
+                            )
+                            col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                            if len(response["rows"]) != 0:
+                                for row in response["rows"]:
+                                    data.append(row)
+                            response_df = pd.DataFrame(data=data, columns=col_names)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "user_activity_by_location", f"{dimension},{filters_2[j]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "user_activity_by_location", f"{dimension},{filters_2[j]}.xlsx"), index=False)
+                        elif filters_2[j] == "group":
+                            data = []
+                            col_names = None
+                            response = self.execute_api_request(
+                                self.youtubeAnalytics.reports().query,
+                                    dimensions=f"{dimension},{filters_2[j]}",
+                                    endDate=f"{self.end_date}",
+                                    filters=f"{filters_2[j]}=={','.join(self.groups)}",
+                                    ids="channel==MINE",
+                                    metrics=f"{','.join(metrics)}",
+                                    startDate=f"{self.start_date}"
+                            )
+                            col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                            if len(response["rows"]) != 0:
+                                for row in response["rows"]:
+                                    data.append(row)
+                            response_df = pd.DataFrame(data=data, columns=col_names)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "user_activity_by_location", f"{dimension},{filters_2[j]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "user_activity_by_location", f"{dimension},{filters_2[j]}.xlsx"), index=False)
+                    elif i == 0 and j == 0:
+                        data = []
+                        col_names = None
+                        response = self.execute_api_request(
+                            self.youtubeAnalytics.reports().query,
+                                dimensions=f"{dimension}",
+                                endDate=f"{self.end_date}",
+                                ids="channel==MINE",
+                                metrics=f"{','.join(metrics)}",
+                                startDate=f"{self.start_date}"
+                        )
+                        col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                        if len(response["rows"]) != 0:
+                            for row in response["rows"]:
+                                data.append(row)
+                        response_df = pd.DataFrame(data=data, columns=col_names)
+                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "user_activity_by_location", f"{dimension}.csv"), index=False)
+                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "user_activity_by_location", f"{dimension}.xlsx"), index=False)
         return

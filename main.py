@@ -1,5 +1,6 @@
 import os
-from datetime import date
+import time
+from datetime import date, timedelta
 from YT_ANALYTICS import YT_ANALYTICS
 
 def main():
@@ -27,51 +28,223 @@ def main():
             os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}", "playlist_reports", "csv", f"{category}"))
 
             os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}", "playlist_reports", "excel", f"{category}"))
+    
+    start_time = time.time()
+    curr_time = time.time()
+    
+    YT.basic_user_activity_statistics()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get basic_user_activity_statistics")
+    curr_time = end_time
+    
+    YT.basic_user_activity_US()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get basic_user_activity_US")
+    curr_time = end_time
+    
+    YT.user_activity_by_location_over_time()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get user_activity_by_location_over_time")
+    curr_time = end_time
+    
+    YT.user_activity_in_US_over_time()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get user_activity_in_US_over_time")
+    curr_time = end_time
 
-    #YT.basic_user_activity_statistics()
-    #YT.basic_user_activity_US()
-    #YT.user_activity_by_location_over_time()
-    #YT.user_activity_in_US_over_time()
-    #YT.user_activity_by_location()
-    #YT.user_activity_in_US()
-    #YT.user_activity_by_location_over_subscribed_status()
-    #YT.user_activity_in_US_over_subscribed_status()
-    #YT.playback_details_by_location_over_liveOrOnDemand()
-    #YT.playback_details_by_location_over_time()
-    #YT.playback_details_by_country()
-    #YT.playback_details_by_country_averageViewPercentage()
-    #YT.playback_details_in_US()
-    #YT.playback_details_in_US_averageViewPercentage()
-    #YT.video_playback_by_location()
-    #YT.playback_location_details()
-    #YT.traffic_source()
-    #YT.traffic_source_details()
-    #YT.device_type()
-    #YT.operating_system()
-    #YT.operating_system_and_device_type()
-    #YT.viewer_demographics()
-    #YT.engagement_and_content_sharing()
-    #YT.audience_retention()
-    #YT.top_videos_regional()
-    #YT.top_videos_in_US()
-    #YT.top_videos_by_subscriber_type()
-    #YT.top_videos_by_yt_product()
-    #YT.top_videos_by_playback_details()
+    YT.user_activity_by_location()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get user_activity_by_location")
+    curr_time = end_time
 
-    #YT.basic_stats_playlist()
-    #YT.time_based_playlist()
-    #YT.activity_by_location_playlist()
-    #YT.activity_in_US_playlist()
-    #YT.playback_locations_playlist()
-    #YT.playback_locations_details_playlist()
-    #YT.traffic_sources_playlist()
-    #YT.traffic_sources_details_playlist()
-    #YT.device_type_playlist() 
-    #YT.operating_system_playlist()
-    #YT.operating_system_and_device_type_playlist()
-    #YT.viewer_demographics_playlist()
+    YT.user_activity_in_US()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get user_activity_in_US")
+    curr_time = end_time
+
+    YT.user_activity_by_location_over_subscribed_status()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get user_activity_by_location_over_subscribed_status")
+    curr_time = end_time
+
+    YT.user_activity_in_US_over_subscribed_status()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get user_activity_in_US_over_subscribed_status")
+    curr_time = end_time
+
+    YT.playback_details_by_location_over_liveOrOnDemand()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get playback_details_by_location_over_liveOrOnDemand")    
+    curr_time = end_time
+
+    YT.playback_details_by_location_over_time()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get playback_details_by_location_over_time")
+    curr_time = end_time
+
+    YT.playback_details_by_country()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get playback_details_by_country")
+    curr_time = end_time
+
+    YT.playback_details_by_country_averageViewPercentage()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get playback_details_by_country_averageViewPercentage")
+    curr_time = end_time
+
+    YT.playback_details_in_US()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get playback_details_in_US")
+    curr_time = end_time
+
+    YT.playback_details_in_US_averageViewPercentage()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get playback_details_in_US_averageViewPercentage")
+    curr_time = end_time
+
+    YT.video_playback_by_location()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get video_playback_by_location")
+    curr_time = end_time
+
+    YT.playback_location_details()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get playback_location_details")
+    curr_time = end_time
+
+    YT.traffic_source()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get traffic_source")
+    curr_time = end_time
+
+    YT.traffic_source_details()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get traffic_source_details")
+    curr_time = end_time
+
+    YT.device_type()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get device_type")
+    curr_time = end_time
+
+    YT.operating_system()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get operating_system")
+    curr_time = end_time
+
+    YT.operating_system_and_device_type()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get operating_system_and_device_type")
+    curr_time = end_time
+
+    YT.viewer_demographics()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get viewer_demographics")
+    curr_time = end_time
+
+    YT.engagement_and_content_sharing()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get engagement_and_content_sharing")
+    curr_time = end_time
+
+    YT.audience_retention()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get audience_retention")
+    curr_time = end_time
+
+    YT.top_videos_regional()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get top_videos_regional")
+    curr_time = end_time
+
+    YT.top_videos_in_US()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get top_videos_in_US")
+    curr_time = end_time
+
+    YT.top_videos_by_subscriber_type()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get top_videos_by_subscriber_type")
+    curr_time = end_time
+
+    YT.top_videos_by_yt_product()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get top_videos_by_yt_product")
+    curr_time = end_time
+
+    YT.top_videos_by_playback_details()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get top_videos_by_playback_details")
+    curr_time = end_time
+
+
+    YT.basic_stats_playlist()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get basic_stats_playlist")    
+    curr_time = end_time
+
+    YT.time_based_playlist()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get time_based_playlist")
+    curr_time = end_time
+
+    YT.activity_by_location_playlist()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get activity_by_location_playlist")
+    curr_time = end_time
+
+    YT.activity_in_US_playlist()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get activity_in_US_playlist")
+    curr_time = end_time
+
+    YT.playback_locations_playlist()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get playback_locations_playlist")
+    curr_time = end_time
+
+    YT.playback_locations_details_playlist()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get playback_locations_details_playlist")
+    curr_time = end_time
+
+    YT.traffic_sources_playlist()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get traffic_sources_playlist")
+    curr_time = end_time
+
+    YT.traffic_sources_details_playlist()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get traffic_sources_details_playlist")
+    curr_time = end_time
+
+    YT.device_type_playlist() 
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get device_type_playlist")
+    curr_time = end_time
+
+    YT.operating_system_playlist()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get operating_system_playlist")
+    curr_time = end_time
+
+    YT.operating_system_and_device_type_playlist()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get operating_system_and_device_type_playlist")
+    curr_time = end_time
+
+    YT.viewer_demographics_playlist()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get viewer_demographics_playlist")
+    curr_time = end_time
+
     YT.top_playlists()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get top_playlists")
+    finish_time = time.time()
 
+    print(f"Program finished, your data has been cleaned! It has taken {timedelta(seconds=round(finish_time - start_time))}.")
+    
 if __name__ == "__main__":
     main()
     
