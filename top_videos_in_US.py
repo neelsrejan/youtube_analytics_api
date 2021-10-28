@@ -41,8 +41,8 @@ class Top_Videos_In_US(Auth):
                                 for row in response["rows"]:
                                     data.append(row)
                     response_df = pd.DataFrame(data=data, columns=col_names)
-                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_in_US", f"{required_dimension},{required_filter},{filters[i]},{sort_by}.csv"), index=False)
-                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_in_US", f"{required_dimension},{required_filter},{filters[i]},{sort_by}.xlsx"), index=False)
+                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_in_US", f"{required_dimension},{required_filter},{filters[i]},{sort_by}.csv"), index=False)
+                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_in_US", f"{required_dimension},{required_filter},{filters[i]},{sort_by}.xlsx"), index=False)
                 else:
                     data = []
                     col_names = None
@@ -63,8 +63,8 @@ class Top_Videos_In_US(Auth):
                             for row in response["rows"]:
                                 data.append(row)
                     response_df = pd.DataFrame(data=data, columns=col_names)
-                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_in_US", f"{required_dimension},{required_filter},{sort_by}.csv"), index=False)
-                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_in_US", f"{required_dimension},{required_filter},{sort_by}.xlsx"), index=False)
+                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_in_US", f"{required_dimension},{required_filter},{sort_by}.csv"), index=False)
+                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_in_US", f"{required_dimension},{required_filter},{sort_by}.xlsx"), index=False)
         return
 
         

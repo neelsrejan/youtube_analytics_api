@@ -51,8 +51,8 @@ class User_Activity_In_US_Over_Time(Auth):
                                         for row in response["rows"]:
                                             data.append(row)
                                 response_df = pd.DataFrame(data=data, columns=col_names)
-                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "user_activity_in_US_over_time", f"{dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
-                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "user_activity_in_US_over_time", f"{dimension},{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
+                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "user_activity_in_US_over_time", f"{dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
+                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "user_activity_in_US_over_time", f"{dimension},{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
                             elif filters_2[j] == "group":
                                 data = []
                                 col_names = None
@@ -71,8 +71,8 @@ class User_Activity_In_US_Over_Time(Auth):
                                         for row in response["rows"]:
                                             data.append(row)
                                 response_df = pd.DataFrame(data=data, columns=col_names)
-                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "user_activity_in_US_over_time", f"{dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
-                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "user_activity_in_US_over_time", f"{dimension},{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
+                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "user_activity_in_US_over_time", f"{dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
+                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "user_activity_in_US_over_time", f"{dimension},{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
                     elif i == 0 and j == 0:
                         if filters_1[i] == "province":
                             data = []
@@ -92,6 +92,6 @@ class User_Activity_In_US_Over_Time(Auth):
                                     for row in response["rows"]:
                                         data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "user_activity_in_US_over_time", f"{dimension},{filters_1[i]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "user_activity_in_US_over_time", f"{dimension},{filters_1[i]}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "user_activity_in_US_over_time", f"{dimension},{filters_1[i]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "user_activity_in_US_over_time", f"{dimension},{filters_1[i]}.xlsx"), index=False)
         return

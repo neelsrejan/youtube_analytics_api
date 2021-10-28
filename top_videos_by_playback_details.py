@@ -60,8 +60,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                         for row in response["rows"]:
                                                             data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "province":
                                     data = []
                                     col_names = None
@@ -85,8 +85,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                         for row in response["rows"]:
                                                             data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "continent":
                                     data = []
                                     col_names = None
@@ -112,8 +112,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                             row.insert(1, f"{continent}")
                                                             data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "subContinent":
                                     data = []
                                     col_names = None
@@ -139,8 +139,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                             row.insert(1, f"{subcontinent}")
                                                             data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                             elif i != 0 and j != 0 and k != 0 and l == 0:
                                 if filters_1[i] == "country":
                                     data = []
@@ -164,8 +164,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                     for row in response["rows"]:
                                                         data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "province":
                                     data = []
                                     col_names = None
@@ -188,8 +188,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                     for row in response["rows"]:
                                                         data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "continent":
                                     data = []
                                     col_names = None
@@ -214,8 +214,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                         row.insert(1, f"{continent}")
                                                         data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "subContinent":
                                     data = []
                                     col_names = None
@@ -240,8 +240,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                         row.insert(1, f"{subcontinent}")
                                                         data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by}.xlsx"), index=False)
                             elif i != 0 and j != 0 and k == 0 and l != 0:
                                 if filters_1[i] == "country":
                                     data = []
@@ -265,8 +265,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                     for row in response["rows"]:
                                                         data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "province":
                                     data = []
                                     col_names = None
@@ -289,8 +289,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                     for row in response["rows"]:
                                                         data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "continent":
                                     data = []
                                     col_names = None
@@ -315,8 +315,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                         row.insert(1, f"{continent}")
                                                         data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "subContinent":
                                     data = []
                                     col_names = None
@@ -341,8 +341,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                         row.insert(1, f"{subcontinent}")
                                                         data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                             elif i != 0 and j != 0 and k == 0 and l == 0:
                                 if filters_1[i] == "country":
                                     data = []
@@ -365,8 +365,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                 for row in response["rows"]:
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "province":
                                     data = []
                                     col_names = None
@@ -388,8 +388,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                 for row in response["rows"]:
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "continent":
                                     data = []
                                     col_names = None
@@ -413,8 +413,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                     row.insert(1, f"{continent}")
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "subContinent":
                                     data = []
                                     col_names = None
@@ -438,8 +438,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                     row.insert(1, f"{subcontinent}")
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by}.xlsx"), index=False)
                             elif i != 0 and j == 0 and k != 0 and l != 0:
                                 if filters_1[i] == "country":
                                     data = []
@@ -463,8 +463,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                     for row in response["rows"]:
                                                         data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "province":
                                     data = []
                                     col_names = None
@@ -487,8 +487,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                     for row in response["rows"]:
                                                         data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "continent":
                                     data = []
                                     col_names = None
@@ -513,8 +513,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                         row.insert(1, f"{continent}")
                                                         data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "subContinent":
                                     data = []
                                     col_names = None
@@ -539,8 +539,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                         row.insert(1, f"{subcontinent}")
                                                         data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                             elif i != 0 and j == 0 and k != 0 and l == 0:
                                 if filters_1[i] == "country":
                                     data = []
@@ -563,8 +563,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                 for row in response["rows"]:
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "province":
                                     data = []
                                     col_names = None
@@ -586,8 +586,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                 for row in response["rows"]:
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "continent":
                                     data = []
                                     col_names = None
@@ -611,8 +611,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                     row.insert(1, f"{continent}")
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "subContinent":
                                     data = []
                                     col_names = None
@@ -636,8 +636,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                     row.insert(1, f"{subcontinent}")
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by}.xlsx"), index=False)
                             elif i != 0 and j == 0 and k == 0 and l != 0:
                                 if filters_1[i] == "country":
                                     data = []
@@ -660,8 +660,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                 for row in response["rows"]:
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "province":
                                     data = []
                                     col_names = None
@@ -683,8 +683,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                 for row in response["rows"]:
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "continent":
                                     data = []
                                     col_names = None
@@ -708,8 +708,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                     row.insert(1, f"{continent}")
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "subContinent":
                                     data = []
                                     col_names = None
@@ -733,8 +733,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                     row.insert(1, f"{subcontinent}")
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                             elif i != 0 and j == 0 and k == 0 and l == 0:
                                 if filters_1[i] == "country":
                                     data = []
@@ -756,8 +756,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                             for row in response["rows"]:
                                                 data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "province":
                                     data = []
                                     col_names = None
@@ -778,8 +778,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                             for row in response["rows"]:
                                                 data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "continent":
                                     data = []
                                     col_names = None
@@ -802,8 +802,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                 row.insert(1, f"{continent}")
                                                 data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{sort_by}.xlsx"), index=False)
                                 elif filters_1[i] == "subContinent":
                                     data = []
                                     col_names = None
@@ -826,8 +826,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                 row.insert(1, f"{subcontinent}")
                                                 data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
-                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{sort_by}.csv"), index=False)
-                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{sort_by}.xlsx"), index=False)
+                                    response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{sort_by}.csv"), index=False)
+                                    response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_1[i]},{sort_by}.xlsx"), index=False)
                             elif i == 0 and j != 0 and k != 0 and l != 0:
                                 data = []
                                 col_names = None
@@ -850,8 +850,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                                 for row in response["rows"]:
                                                     data.append(row)
                                 response_df = pd.DataFrame(data=data, columns=col_names)
-                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                             elif i == 0 and j != 0 and k != 0 and l == 0:
                                 data = []
                                 col_names = None
@@ -873,8 +873,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                             for row in response["rows"]:
                                                 data.append(row)
                                 response_df = pd.DataFrame(data=data, columns=col_names)
-                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_2[j]},{filters_3[k]},{sort_by}.csv"), index=False)
-                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_2[j]},{filters_3[k]},{sort_by}.xlsx"), index=False)
+                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_2[j]},{filters_3[k]},{sort_by}.csv"), index=False)
+                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_2[j]},{filters_3[k]},{sort_by}.xlsx"), index=False)
                             elif i == 0 and j != 0 and k == 0 and l != 0:
                                 data = []
                                 col_names = None
@@ -896,8 +896,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                             for row in response["rows"]:
                                                 data.append(row)
                                 response_df = pd.DataFrame(data=data, columns=col_names)
-                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_2[j]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_2[j]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_2[j]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_2[j]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                             elif i == 0 and j != 0 and k == 0 and l == 0:
                                 data = []
                                 col_names = None
@@ -918,8 +918,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                         for row in response["rows"]:
                                             data.append(row)
                                 response_df = pd.DataFrame(data=data, columns=col_names)
-                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_2[j]},{sort_by}.csv"), index=False)
-                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_2[j]},{sort_by}.xlsx"), index=False)
+                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_2[j]},{sort_by}.csv"), index=False)
+                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_2[j]},{sort_by}.xlsx"), index=False)
                             elif i == 0 and j == 0 and k != 0 and l != 0:
                                 data = []
                                 col_names = None
@@ -941,8 +941,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                             for row in response["rows"]:
                                                 data.append(row)
                                 response_df = pd.DataFrame(data=data, columns=col_names)
-                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
-                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_3[k]},{filters_4[l]},{sort_by}.csv"), index=False)
+                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_3[k]},{filters_4[l]},{sort_by}.xlsx"), index=False)
                             elif i == 0 and j == 0 and k != 0 and l == 0:
                                 data = []
                                 col_names = None
@@ -963,8 +963,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                         for row in response["rows"]:
                                             data.append(row)
                                 response_df = pd.DataFrame(data=data, columns=col_names)
-                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_3[k]},{sort_by}.csv"), index=False)
-                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_3[k]},{sort_by}.xlsx"), index=False)
+                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_3[k]},{sort_by}.csv"), index=False)
+                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_3[k]},{sort_by}.xlsx"), index=False)
                             elif i == 0 and j == 0 and k == 0 and l != 0:
                                 data = []
                                 col_names = None
@@ -985,8 +985,8 @@ class Top_Videos_By_Playback_Details(Auth):
                                         for row in response["rows"]:
                                             data.append(row)
                                 response_df = pd.DataFrame(data=data, columns=col_names)
-                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_4[l]},{sort_by}.csv"), index=False)
-                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_4[l]},{sort_by}.xlsx"), index=False)
+                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{filters_4[l]},{sort_by}.csv"), index=False)
+                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{filters_4[l]},{sort_by}.xlsx"), index=False)
                             elif i == 0 and j == 0 and k == 0 and l == 0:
                                 data = []
                                 col_names = None
@@ -1005,7 +1005,7 @@ class Top_Videos_By_Playback_Details(Auth):
                                     for row in response["rows"]:
                                         data.append(row)
                                 response_df = pd.DataFrame(data=data, columns=col_names)
-                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{sort_by}.csv"), index=False)
-                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{sort_by}.xlsx"), index=False)
+                                response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "top_videos_by_playback_details", f"{required_dimension},{sort_by}.csv"), index=False)
+                                response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "top_videos_by_playback_details", f"{required_dimension},{sort_by}.xlsx"), index=False)
         return
 
