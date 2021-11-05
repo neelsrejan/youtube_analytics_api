@@ -142,10 +142,10 @@ class Playback_Locations_Playlist(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                col_names.insert(1, f"{filters_1[i]}")
+                                                col_names.insert(2, f"{filters_1[i]}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
-                                                        row.insert(1, f"{continent}")
+                                                        row.insert(2, f"{continent}")
                                                         data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "playback_locations_playlist", f"{required_dimension},{dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"), index=False)
@@ -165,10 +165,10 @@ class Playback_Locations_Playlist(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                col_names.insert(1, f"{filters_1[i]}")
+                                                col_names.insert(2, f"{filters_1[i]}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
-                                                        row.insert(1, f"{continent}")
+                                                        row.insert(2, f"{continent}")
                                                         data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "playback_locations_playlist", f"{required_dimension},{dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"), index=False)
@@ -189,10 +189,10 @@ class Playback_Locations_Playlist(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                col_names.insert(1, f"{filters_1[i]}")
+                                                col_names.insert(2, f"{filters_1[i]}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
-                                                        row.insert(1, f"{subcontinent}")
+                                                        row.insert(2, f"{subcontinent}")
                                                         data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "playback_locations_playlist", f"{required_dimension},{dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"), index=False)
@@ -212,10 +212,10 @@ class Playback_Locations_Playlist(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                col_names.insert(1, f"{filters_1[i]}")
+                                                col_names.insert(2, f"{filters_1[i]}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
-                                                        row.insert(1, f"{subcontinent}")
+                                                        row.insert(2, f"{subcontinent}")
                                                         data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "playback_locations_playlist", f"{required_dimension},{dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"), index=False)
@@ -318,10 +318,10 @@ class Playback_Locations_Playlist(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                            col_names.insert(1, f"{filters_1[i]}")
+                                            col_names.insert(2, f"{filters_1[i]}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
-                                                    row.insert(1, f"{continent}")
+                                                    row.insert(2, f"{continent}")
                                                     data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "playback_locations_playlist", f"{required_dimension},{dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
@@ -340,10 +340,10 @@ class Playback_Locations_Playlist(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                            col_names.insert(1, f"{filters_1[i]}")
+                                            col_names.insert(2, f"{filters_1[i]}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
-                                                    row.insert(1, f"{continent}")
+                                                    row.insert(2, f"{continent}")
                                                     data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "playback_locations_playlist", f"{required_dimension},{dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
@@ -363,10 +363,10 @@ class Playback_Locations_Playlist(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                            col_names.insert(1, f"{filters_1[i]}")
+                                            col_names.insert(2, f"{filters_1[i]}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
-                                                    row.insert(1, f"{subcontinent}")
+                                                    row.insert(2, f"{subcontinent}")
                                                     data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "playback_locations_playlist", f"{required_dimension},{dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
@@ -385,10 +385,10 @@ class Playback_Locations_Playlist(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                            col_names.insert(1, f"{filters_1[i]}")
+                                            col_names.insert(2, f"{filters_1[i]}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
-                                                    row.insert(1, f"{subcontinent}")
+                                                    row.insert(2, f"{subcontinent}")
                                                     data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "playback_locations_playlist", f"{required_dimension},{dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
@@ -451,10 +451,10 @@ class Playback_Locations_Playlist(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                            col_names.insert(1, f"{filters_1[i]}")
+                                            col_names.insert(2, f"{filters_1[i]}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
-                                                    row.insert(1, f"{continent}")
+                                                    row.insert(2, f"{continent}")
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
                                     response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "playback_locations_playlist", f"{required_dimension},{dimension},{filters_1[i]},{filters_3[k]}.csv"), index=False)
@@ -474,10 +474,10 @@ class Playback_Locations_Playlist(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                            col_names.insert(1, f"{filters_1[i]}")
+                                            col_names.insert(2, f"{filters_1[i]}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
-                                                    row.insert(1, f"{subcontinent}")
+                                                    row.insert(2, f"{subcontinent}")
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
                                     response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "playback_locations_playlist", f"{required_dimension},{dimension},{filters_1[i]},{filters_3[k]}.csv"), index=False)
@@ -537,10 +537,10 @@ class Playback_Locations_Playlist(Auth):
                                                 startDate=f"{self.start_date}"
                                         )
                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                        col_names.insert(1, f"{filters_1[i]}")
+                                        col_names.insert(2, f"{filters_1[i]}")
                                         if len(response["rows"]) != 0:
                                             for row in response["rows"]:
-                                                row.insert(1, f"{continent}")
+                                                row.insert(2, f"{continent}")
                                                 data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
                                     response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "playback_locations_playlist", f"{required_dimension},{dimension},{filters_1[i]}.csv"), index=False)
@@ -559,10 +559,10 @@ class Playback_Locations_Playlist(Auth):
                                                 startDate=f"{self.start_date}"
                                         )
                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                        col_names.insert(1, f"{filters_1[i]}")
+                                        col_names.insert(2, f"{filters_1[i]}")
                                         if len(response["rows"]) != 0:
                                             for row in response["rows"]:
-                                                row.insert(1, f"{subcontinent}")
+                                                row.insert(2, f"{subcontinent}")
                                                 data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
                                     response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "playback_locations_playlist", f"{required_dimension},{dimension},{filters_1[i]}.csv"), index=False)

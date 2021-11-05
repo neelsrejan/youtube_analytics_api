@@ -6,6 +6,10 @@ from auth import Auth
 class Playback_Details_By_Country(Auth):
 
     def playback_details_by_country(self):
+
+        if not self.has_countries:
+            return
+
         metrics = ["views", "redViews", "estimatedMinutesWatched", "estimatedRedMinutesWatched", "averageViewDuration"]
         dimensions = ["country"]
         live_status = ["LIVE", "ON_DEMAND"]

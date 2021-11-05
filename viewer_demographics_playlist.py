@@ -140,10 +140,16 @@ class Viewer_Demographics_Playlist(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                            col_names.insert(1, f"{filters_1[i]}")
+                                            if dimension != "ageGroup,gender":
+                                                col_names.insert(1, f"{filters_1[i]}")
+                                            else:
+                                                col_names.insert(2, f"{filters_1[i]}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
-                                                    row.insert(1, f"{continent}")
+                                                    if dimension != "ageGroup,gender":
+                                                        row.insert(1, f"{continent}")
+                                                    else:
+                                                        row.insert(2, f"{continent}")
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
                                     response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "viewer_demographics_playlist", f"{dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"), index=False)
@@ -163,10 +169,16 @@ class Viewer_Demographics_Playlist(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                            col_names.insert(1, f"{filters_1[i]}")
+                                            if dimension != "ageGroup,gender":
+                                                col_names.insert(1, f"{filters_1[i]}")
+                                            else:
+                                                col_names.insert(2, f"{filters_1[i]}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
-                                                    row.insert(1, f"{continent}")
+                                                    if dimension != "ageGroup,gender":
+                                                        row.insert(1, f"{continent}")
+                                                    else:
+                                                        row.insert(2, f"{continent}")
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
                                     response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "viewer_demographics_playlist", f"{dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"), index=False)
@@ -187,10 +199,16 @@ class Viewer_Demographics_Playlist(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                            col_names.insert(1, f"{filters_1[i]}")
+                                            if dimension != "ageGroup,gender":
+                                                col_names.insert(1, f"{filters_1[i]}")
+                                            else:
+                                                col_names.insert(2, f"{filters_1[i]}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
-                                                    row.insert(1, f"{subcontinent}")
+                                                    if dimension != "ageGroup,gender":
+                                                        row.insert(1, f"{subcontinent}")
+                                                    else:
+                                                        row.insert(2, f"{subcontinent}")
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
                                     response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "viewer_demographics_playlist", f"{dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"), index=False)
@@ -210,10 +228,16 @@ class Viewer_Demographics_Playlist(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                            col_names.insert(1, f"{filters_1[i]}")
+                                            if dimension != "ageGroup,gender":
+                                                col_names.insert(1, f"{filters_1[i]}")
+                                            else:
+                                                col_names.insert(2, f"{filters_1[i]}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
-                                                    row.insert(1, f"{subcontinent}")
+                                                    if dimension != "ageGroup,gender":
+                                                        row.insert(1, f"{subcontinent}")
+                                                    else:
+                                                        row.insert(2, f"{subcontinent}")
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
                                     response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "viewer_demographics_playlist", f"{dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"), index=False)
@@ -316,10 +340,16 @@ class Viewer_Demographics_Playlist(Auth):
                                                 startDate=f"{self.start_date}"
                                         )
                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                        col_names.insert(1, f"{filters_1[i]}")
+                                        if dimension != "ageGroup,gender":
+                                            col_names.insert(1, f"{filters_1[i]}")
+                                        else:
+                                            col_names.insert(2, f"{filters_1[i]}")
                                         if len(response["rows"]) != 0:
                                             for row in response["rows"]:
-                                                row.insert(1, f"{continent}")
+                                                if dimension != "ageGroup,gender":
+                                                    row.insert(1, f"{continent}")
+                                                else:
+                                                    row.insert(2, f"{continent}")
                                                 data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
                                     response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "viewer_demographics_playlist", f"{dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
@@ -338,10 +368,16 @@ class Viewer_Demographics_Playlist(Auth):
                                                 startDate=f"{self.start_date}"
                                         )
                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                        col_names.insert(1, f"{filters_1[i]}")
+                                        if dimension != "ageGroup,gender":
+                                            col_names.insert(1, f"{filters_1[i]}")
+                                        else:
+                                            col_names.insert(2, f"{filters_1[i]}")
                                         if len(response["rows"]) != 0:
                                             for row in response["rows"]:
-                                                row.insert(1, f"{continent}")
+                                                if dimension != "ageGroup,gender":
+                                                    row.insert(1, f"{continent}")
+                                                else:
+                                                    row.insert(2, f"{continent}")
                                                 data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
                                     response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "viewer_demographics_playlist", f"{dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
@@ -361,10 +397,16 @@ class Viewer_Demographics_Playlist(Auth):
                                                 startDate=f"{self.start_date}"
                                         )
                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                        col_names.insert(1, f"{filters_1[i]}")
+                                        if dimension != "ageGroup,gender":
+                                            col_names.insert(1, f"{filters_1[i]}")
+                                        else:
+                                            col_names.insert(2, f"{filters_1[i]}")
                                         if len(response["rows"]) != 0:
                                             for row in response["rows"]:
-                                                row.insert(1, f"{subcontinent}")
+                                                if dimension != "ageGroup,gender":
+                                                    row.insert(1, f"{subcontinent}")
+                                                else:
+                                                    row.insert(2, f"{subcontinent}")
                                                 data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
                                     response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "viewer_demographics_playlist", f"{dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
@@ -383,10 +425,16 @@ class Viewer_Demographics_Playlist(Auth):
                                                 startDate=f"{self.start_date}"
                                         )
                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                        col_names.insert(1, f"{filters_1[i]}")
+                                        if dimension != "ageGroup,gender":
+                                            col_names.insert(1, f"{filters_1[i]}")
+                                        else:
+                                            col_names.insert(2, f"{filters_1[i]}")
                                         if len(response["rows"]) != 0:
                                             for row in response["rows"]:
-                                                row.insert(1, f"{subcontinent}")
+                                                if dimension != "ageGroup,gender":
+                                                    row.insert(1, f"{subcontinent}")
+                                                else:
+                                                    row.insert(2, f"{subcontinent}")
                                                 data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
                                     response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "viewer_demographics_playlist", f"{dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
@@ -449,10 +497,16 @@ class Viewer_Demographics_Playlist(Auth):
                                                 startDate=f"{self.start_date}"
                                         )
                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                        col_names.insert(1, f"{filters_1[i]}")
+                                        if dimension != "ageGroup,gender":
+                                            col_names.insert(1, f"{filters_1[i]}")
+                                        else:
+                                            col_names.insert(2, f"{filters_1[i]}")
                                         if len(response["rows"]) != 0:
                                             for row in response["rows"]:
-                                                row.insert(1, f"{continent}")
+                                                if dimension != "ageGroup,gender":
+                                                    row.insert(1, f"{continent}")
+                                                else:
+                                                    row.insert(2, f"{continent}")
                                                 data.append(row)
                                 response_df = pd.DataFrame(data=data, columns=col_names)
                                 response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "viewer_demographics_playlist", f"{dimension},{filters_1[i]},{filters_3[k]}.csv"), index=False)
@@ -472,10 +526,16 @@ class Viewer_Demographics_Playlist(Auth):
                                                 startDate=f"{self.start_date}"
                                         )
                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                        col_names.insert(1, f"{filters_1[i]}")
+                                        if dimension != "ageGroup,gender":
+                                            col_names.insert(1, f"{filters_1[i]}")
+                                        else:
+                                            col_names.insert(2, f"{filters_1[i]}")
                                         if len(response["rows"]) != 0:
                                             for row in response["rows"]:
-                                                row.insert(1, f"{subcontinent}")
+                                                if dimension != "ageGroup,gender":
+                                                    row.insert(1, f"{subcontinent}")
+                                                else:
+                                                    row.insert(2, f"{subcontinent}")
                                                 data.append(row)
                                 response_df = pd.DataFrame(data=data, columns=col_names)
                                 response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "viewer_demographics_playlist", f"{dimension},{filters_1[i]},{filters_3[k]}.csv"), index=False)
@@ -535,10 +595,16 @@ class Viewer_Demographics_Playlist(Auth):
                                             startDate=f"{self.start_date}"
                                     )
                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                    col_names.insert(1, f"{filters_1[i]}")
+                                    if dimension != "ageGroup,gender":
+                                        col_names.insert(1, f"{filters_1[i]}")
+                                    else:
+                                        col_names.insert(2, f"{filters_1[i]}")
                                     if len(response["rows"]) != 0:
                                         for row in response["rows"]:
-                                            row.insert(1, f"{continent}")
+                                            if dimension != "ageGroup,gender":
+                                                row.insert(1, f"{continent}")
+                                            else:
+                                                row.insert(2, f"{continent}")
                                             data.append(row)
                                 response_df = pd.DataFrame(data=data, columns=col_names)
                                 response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "viewer_demographics_playlist", f"{dimension},{filters_1[i]}.csv"), index=False)
@@ -557,10 +623,16 @@ class Viewer_Demographics_Playlist(Auth):
                                             startDate=f"{self.start_date}"
                                     )
                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                    col_names.insert(1, f"{filters_1[i]}")
+                                    if dimension != "ageGroup,gender":
+                                        col_names.insert(1, f"{filters_1[i]}")
+                                    else:
+                                        col_names.insert(2, f"{filters_1[i]}")
                                     if len(response["rows"]) != 0:
                                         for row in response["rows"]:
-                                            row.insert(1, f"{subcontinent}")
+                                            if dimension != "ageGroup,gender":
+                                                row.insert(1, f"{subcontinent}")
+                                            else:
+                                                row.insert(2, f"{subcontinent}")
                                             data.append(row)
                                 response_df = pd.DataFrame(data=data, columns=col_names)
                                 response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "viewer_demographics_playlist", f"{dimension},{filters_1[i]}.csv"), index=False)

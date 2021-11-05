@@ -4405,8 +4405,8 @@ class Device_Type(Auth):
                                                 for row in response["rows"]:
                                                     data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
-                                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "device_type", f"{required_dimension},{dimension},.csv"), index=False)
-                                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "device_type", f"{required_dimension},{dimension},.xlsx"), index=False)
+                                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "device_type", f"{required_dimension},{dimension}.csv"), index=False)
+                                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "device_type", f"{required_dimension},{dimension}.xlsx"), index=False)
                                     else:
                                         if i != 0 and j != 0 and k != 0 and l != 0 and m != 0 and n == 0:
                                             if filters_1[i] == "country":

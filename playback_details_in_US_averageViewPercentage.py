@@ -6,6 +6,10 @@ from auth import Auth
 class Playback_Details_In_US_AverageViewPercentage(Auth):
 
     def playback_details_in_US_averageViewPercentage(self):
+
+        if not self.has_provinces:
+            return
+
         metrics = ["views", "redViews", "estimatedMinutesWatched", "estimatedRedMinutesWatched", "averageViewDuration", "averageViewPercentage"]
         dimensions = ["province"]
         sub_status = ["SUBSCRIBED", "UNSUBSCRIBED"]

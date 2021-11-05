@@ -63,8 +63,10 @@ class Traffic_Source_Details(Auth):
                                                                 startDate=f"{self.start_date}"
                                                         )
                                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                        col_names.insert(1, f"{required_filter}")
                                                         if len(response["rows"]) != 0:
                                                             for row in response["rows"]:
+                                                                row.insert(1, f"{insight_type}")
                                                                 data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -87,8 +89,10 @@ class Traffic_Source_Details(Auth):
                                                                 startDate=f"{self.start_date}"
                                                         )
                                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                        col_names.insert(1, f"{required_filter}")
                                                         if len(response["rows"]) != 0:
                                                             for row in response["rows"]:
+                                                                row.insert(1, f"{insight_type}")
                                                                 data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -112,8 +116,10 @@ class Traffic_Source_Details(Auth):
                                                                 startDate=f"{self.start_date}"
                                                         )
                                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                        col_names.insert(1, f"{required_filter}")
                                                         if len(response["rows"]) != 0:
                                                             for row in response["rows"]:
+                                                                row.insert(1, f"{insight_type}")
                                                                 data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -136,8 +142,10 @@ class Traffic_Source_Details(Auth):
                                                                 startDate=f"{self.start_date}"
                                                         )
                                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                        col_names.insert(1, f"{required_filter}")
                                                         if len(response["rows"]) != 0:
                                                             for row in response["rows"]:
+                                                                row.insert(1, f"{insight_type}")
                                                                 data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -161,10 +169,12 @@ class Traffic_Source_Details(Auth):
                                                                 startDate=f"{self.start_date}"
                                                         )
                                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                        col_names.insert(1, f"{filters_1[i]}")
+                                                        col_names.insert(1, f"{required_filter}")
+                                                        col_names.insert(2, f"{filters_1[i]}")
                                                         if len(response["rows"]) != 0:
                                                             for row in response["rows"]:
-                                                                row.insert(1, f"{continent}")
+                                                                row.insert(1, f"{insight_type}")
+                                                                row.insert(2, f"{continent}")
                                                                 data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -187,10 +197,12 @@ class Traffic_Source_Details(Auth):
                                                                 startDate=f"{self.start_date}"
                                                         )
                                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                        col_names.insert(1, f"{filters_1[i]}")
+                                                        col_names.insert(1, f"{required_filter}")
+                                                        col_names.insert(2, f"{filters_1[i]}")
                                                         if len(response["rows"]) != 0:
                                                             for row in response["rows"]:
-                                                                row.insert(1, f"{continent}")
+                                                                row.insert(1, f"{insight_type}")
+                                                                row.insert(2, f"{continent}")
                                                                 data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -214,10 +226,12 @@ class Traffic_Source_Details(Auth):
                                                                 startDate=f"{self.start_date}"
                                                         )
                                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                        col_names.insert(1, f"{filters_1[i]}")
+                                                        col_names.insert(1, f"{required_filter}")
+                                                        col_names.insert(2, f"{filters_1[i]}")
                                                         if len(response["rows"]) != 0:
                                                             for row in response["rows"]:
-                                                                row.insert(1, f"{subcontinent}")
+                                                                row.insert(1, f"{insight_type}")
+                                                                row.insert(2, f"{subcontinent}")
                                                                 data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -240,10 +254,12 @@ class Traffic_Source_Details(Auth):
                                                                 startDate=f"{self.start_date}"
                                                         )
                                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                        col_names.insert(1, f"{filters_1[i]}")
+                                                        col_names.insert(1, f"{required_filter}")
+                                                        col_names.insert(2, f"{filters_1[i]}")
                                                         if len(response["rows"]) != 0:
                                                             for row in response["rows"]:
-                                                                row.insert(1, f"{subcontinent}")
+                                                                row.insert(1, f"{insight_type}")
+                                                                row.insert(2, f"{subcontinent}")
                                                                 data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -267,8 +283,10 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                    col_names.insert(1, f"{required_filter}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
+                                                            row.insert(1, f"{insight_type}")
                                                             data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by},{insight_type}.csv"), index=False)
@@ -290,8 +308,10 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                    col_names.insert(1, f"{required_filter}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
+                                                            row.insert(1, f"{insight_type}")
                                                             data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by},{insight_type}.csv"), index=False)
@@ -314,8 +334,10 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                    col_names.insert(1, f"{required_filter}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
+                                                            row.insert(1, f"{insight_type}")
                                                             data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by},{insight_type}.csv"), index=False)
@@ -337,8 +359,10 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                    col_names.insert(1, f"{required_filter}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
+                                                            row.insert(1, f"{insight_type}")
                                                             data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by},{insight_type}.csv"), index=False)
@@ -361,10 +385,12 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                    col_names.insert(1, f"{filters_1[i]}")
+                                                    col_names.insert(1, f"{required_filter}")
+                                                    col_names.insert(2, f"{filters_1[i]}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
-                                                            row.insert(1, f"{continent}")
+                                                            row.insert(1, f"{insight_type}")
+                                                            row.insert(2, f"{continent}")
                                                             data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by},{insight_type}.csv"), index=False)
@@ -386,10 +412,12 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                    col_names.insert(1, f"{filters_1[i]}")
+                                                    col_names.insert(1, f"{required_filter}")
+                                                    col_names.insert(2, f"{filters_1[i]}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
-                                                            row.insert(1, f"{continent}")
+                                                            row.insert(1, f"{insight_type}")
+                                                            row.insert(2, f"{continent}")
                                                             data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by},{insight_type}.csv"), index=False)
@@ -412,10 +440,12 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                    col_names.insert(1, f"{filters_1[i]}")
+                                                    col_names.insert(1, f"{required_filter}")
+                                                    col_names.insert(2, f"{filters_1[i]}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
-                                                            row.insert(1, f"{subcontinent}")
+                                                            row.insert(1, f"{insight_type}")
+                                                            row.insert(2, f"{subcontinent}")
                                                             data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by},{insight_type}.csv"), index=False)
@@ -437,10 +467,12 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                    col_names.insert(1, f"{filters_1[i]}")
+                                                    col_names.insert(1, f"{required_filter}")
+                                                    col_names.insert(2, f"{filters_1[i]}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
-                                                            row.insert(1, f"{subcontinent}")
+                                                            row.insert(1, f"{insight_type}")
+                                                            row.insert(2, f"{subcontinent}")
                                                             data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{sort_by},{insight_type}.csv"), index=False)
@@ -464,8 +496,10 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                    col_names.insert(1, f"{required_filter}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
+                                                            row.insert(1, f"{insight_type}")
                                                             data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -487,8 +521,10 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                    col_names.insert(1, f"{required_filter}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
+                                                            row.insert(1, f"{insight_type}")
                                                             data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -511,8 +547,10 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                    col_names.insert(1, f"{required_filter}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
+                                                            row.insert(1, f"{insight_type}")
                                                             data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -534,8 +572,10 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                    col_names.insert(1, f"{required_filter}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
+                                                            row.insert(1, f"{insight_type}")
                                                             data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -558,10 +598,12 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                    col_names.insert(1, f"{filters_1[i]}")
+                                                    col_names.insert(1, f"{required_filter}")
+                                                    col_names.insert(2, f"{filters_1[i]}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
-                                                            row.insert(1, f"{continent}")
+                                                            row.insert(1, f"{insight_type}")
+                                                            row.insert(2, f"{continent}")
                                                             data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -583,10 +625,12 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                    col_names.insert(1, f"{filters_1[i]}")
+                                                    col_names.insert(1, f"{required_filter}")
+                                                    col_names.insert(2, f"{filters_1[i]}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
-                                                            row.insert(1, f"{continent}")
+                                                            row.insert(1, f"{insight_type}")
+                                                            row.insert(2, f"{continent}")
                                                             data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -609,10 +653,12 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                    col_names.insert(1, f"{filters_1[i]}")
+                                                    col_names.insert(1, f"{required_filter}")
+                                                    col_names.insert(2, f"{filters_1[i]}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
-                                                            row.insert(1, f"{subcontinent}")
+                                                            row.insert(1, f"{insight_type}")
+                                                            row.insert(2, f"{subcontinent}")
                                                             data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -634,10 +680,12 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                    col_names.insert(1, f"{filters_1[i]}")
+                                                    col_names.insert(1, f"{required_filter}")
+                                                    col_names.insert(2, f"{filters_1[i]}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
-                                                            row.insert(1, f"{subcontinent}")
+                                                            row.insert(1, f"{insight_type}")
+                                                            row.insert(2, f"{subcontinent}")
                                                             data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -660,8 +708,10 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                col_names.insert(1, f"{required_filter}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
+                                                        row.insert(1, f"{insight_type}")
                                                         data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by},{insight_type}.csv"), index=False)
@@ -682,8 +732,10 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                col_names.insert(1, f"{required_filter}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
+                                                        row.insert(1, f"{insight_type}")
                                                         data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by},{insight_type}.csv"), index=False)
@@ -705,8 +757,10 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                col_names.insert(1, f"{required_filter}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
+                                                        row.insert(1, f"{insight_type}")
                                                         data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by},{insight_type}.csv"), index=False)
@@ -727,8 +781,10 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                col_names.insert(1, f"{required_filter}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
+                                                        row.insert(1, f"{insight_type}")
                                                         data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by},{insight_type}.csv"), index=False)
@@ -750,10 +806,12 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                col_names.insert(1, f"{filters_1[i]}")
+                                                col_names.insert(1, f"{required_filter}")
+                                                col_names.insert(2, f"{filters_1[i]}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
-                                                        row.insert(1, f"{continent}")
+                                                        row.insert(1, f"{insight_type}")
+                                                        row.insert(2, f"{continent}")
                                                         data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by},{insight_type}.csv"), index=False)
@@ -774,10 +832,12 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                col_names.insert(1, f"{filters_1[i]}")
+                                                col_names.insert(1, f"{required_filter}")
+                                                col_names.insert(2, f"{filters_1[i]}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
-                                                        row.insert(1, f"{continent}")
+                                                        row.insert(1, f"{insight_type}")
+                                                        row.insert(2, f"{continent}")
                                                         data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by},{insight_type}.csv"), index=False)
@@ -799,10 +859,12 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                col_names.insert(1, f"{filters_1[i]}")
+                                                col_names.insert(1, f"{required_filter}")
+                                                col_names.insert(2, f"{filters_1[i]}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
-                                                        row.insert(1, f"{subcontinent}")
+                                                        row.insert(1, f"{insight_type}")
+                                                        row.insert(2, f"{subcontinent}")
                                                         data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by},{insight_type}.csv"), index=False)
@@ -823,10 +885,12 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                col_names.insert(1, f"{filters_1[i]}")
+                                                col_names.insert(1, f"{required_filter}")
+                                                col_names.insert(2, f"{filters_1[i]}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
-                                                        row.insert(1, f"{subcontinent}")
+                                                        row.insert(1, f"{insight_type}")
+                                                        row.insert(2, f"{subcontinent}")
                                                         data.append(row)
                                             response_df = pd.DataFrame(data=data, columns=col_names)
                                             response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_2[j]},{sort_by},{insight_type}.csv"), index=False)
@@ -850,8 +914,10 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                    col_names.insert(1, f"{required_filter}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
+                                                            row.insert(1, f"{insight_type}")
                                                             data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -874,8 +940,10 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                    col_names.insert(1, f"{required_filter}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
+                                                            row.insert(1, f"{insight_type}")
                                                             data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -898,10 +966,12 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                    col_names.insert(1, f"{filters_1[i]}")
+                                                    col_names.insert(1, f"{required_filter}")
+                                                    col_names.insert(2, f"{filters_1[i]}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
-                                                            row.insert(1, f"{continent}")
+                                                            row.insert(1, f"{insight_type}")
+                                                            row.insert(2, f"{continent}")
                                                             data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -924,10 +994,12 @@ class Traffic_Source_Details(Auth):
                                                             startDate=f"{self.start_date}"
                                                     )
                                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                    col_names.insert(1, f"{filters_1[i]}")
+                                                    col_names.insert(1, f"{required_filter}")
+                                                    col_names.insert(2, f"{filters_1[i]}")
                                                     if len(response["rows"]) != 0:
                                                         for row in response["rows"]:
-                                                            row.insert(1, f"{subcontinent}")
+                                                            row.insert(1, f"{insight_type}")
+                                                            row.insert(2, f"{subcontinent}")
                                                             data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -950,8 +1022,10 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                col_names.insert(1, f"{required_filter}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
+                                                        row.insert(1, f"{insight_type}")
                                                         data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by},{insight_type}.csv"), index=False)
@@ -973,8 +1047,10 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                col_names.insert(1, f"{required_filter}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
+                                                        row.insert(1, f"{insight_type}")
                                                         data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by},{insight_type}.csv"), index=False)
@@ -996,10 +1072,12 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                col_names.insert(1, f"{filters_1[i]}")
+                                                col_names.insert(1, f"{required_filter}")
+                                                col_names.insert(2, f"{filters_1[i]}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
-                                                        row.insert(1, f"{continent}")
+                                                        row.insert(1, f"{insight_type}")
+                                                        row.insert(2, f"{continent}")
                                                         data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by},{insight_type}.csv"), index=False)
@@ -1021,10 +1099,12 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                col_names.insert(1, f"{filters_1[i]}")
+                                                col_names.insert(1, f"{required_filter}")
+                                                col_names.insert(2, f"{filters_1[i]}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
-                                                        row.insert(1, f"{subcontinent}")
+                                                        row.insert(1, f"{insight_type}")
+                                                        row.insert(2, f"{subcontinent}")
                                                         data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_3[k]},{sort_by},{insight_type}.csv"), index=False)
@@ -1047,8 +1127,10 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                col_names.insert(1, f"{required_filter}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
+                                                        row.insert(1, f"{insight_type}")
                                                         data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -1070,8 +1152,10 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                col_names.insert(1, f"{required_filter}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
+                                                        row.insert(1, f"{insight_type}")
                                                         data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -1093,10 +1177,12 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                col_names.insert(1, f"{filters_1[i]}")
+                                                col_names.insert(1, f"{required_filter}")
+                                                col_names.insert(2, f"{filters_1[i]}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
-                                                        row.insert(1, f"{continent}")
+                                                        row.insert(1, f"{insight_type}")
+                                                        row.insert(2, f"{continent}")
                                                         data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -1118,10 +1204,12 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                                col_names.insert(1, f"{filters_1[i]}")
+                                                col_names.insert(1, f"{required_filter}")
+                                                col_names.insert(2, f"{filters_1[i]}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
-                                                        row.insert(1, f"{subcontinent}")
+                                                        row.insert(1, f"{insight_type}")
+                                                        row.insert(2, f"{subcontinent}")
                                                         data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -1143,8 +1231,10 @@ class Traffic_Source_Details(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                            col_names.insert(1, f"{required_filter}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
+                                                    row.insert(1, f"{insight_type}")
                                                     data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{sort_by},{insight_type}.csv"), index=False)
@@ -1165,8 +1255,10 @@ class Traffic_Source_Details(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                            col_names.insert(1, f"{required_filter}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
+                                                    row.insert(1, f"{insight_type}")
                                                     data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{sort_by},{insight_type}.csv"), index=False)
@@ -1187,10 +1279,12 @@ class Traffic_Source_Details(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                            col_names.insert(1, f"{filters_1[i]}")
+                                            col_names.insert(1, f"{required_filter}")
+                                            col_names.insert(2, f"{filters_1[i]}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
-                                                    row.insert(1, f"{continent}")
+                                                    row.insert(1, f"{insight_type}")
+                                                    row.insert(2, f"{continent}")
                                                     data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{sort_by},{insight_type}.csv"), index=False)
@@ -1211,10 +1305,12 @@ class Traffic_Source_Details(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
-                                            col_names.insert(1, f"{filters_1[i]}")
+                                            col_names.insert(1, f"{required_filter}")
+                                            col_names.insert(2, f"{filters_1[i]}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
-                                                    row.insert(1, f"{subcontinent}")
+                                                    row.insert(1, f"{insight_type}")
+                                                    row.insert(2, f"{subcontinent}")
                                                     data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_1[i]},{sort_by},{insight_type}.csv"), index=False)
@@ -1237,8 +1333,10 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                col_names.insert(1, f"{required_filter}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
+                                                        row.insert(1, f"{insight_type}")
                                                         data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -1260,8 +1358,10 @@ class Traffic_Source_Details(Auth):
                                                         startDate=f"{self.start_date}"
                                                 )
                                                 col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                                col_names.insert(1, f"{required_filter}")
                                                 if len(response["rows"]) != 0:
                                                     for row in response["rows"]:
+                                                        row.insert(1, f"{insight_type}")
                                                         data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_2[j]},{filters_3[k]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -1283,8 +1383,10 @@ class Traffic_Source_Details(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                            col_names.insert(1, f"{required_filter}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
+                                                    row.insert(1, f"{insight_type}")
                                                     data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_2[j]},{filters_3[k]},{sort_by},{insight_type}.csv"), index=False)
@@ -1305,8 +1407,10 @@ class Traffic_Source_Details(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                            col_names.insert(1, f"{required_filter}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
+                                                    row.insert(1, f"{insight_type}")
                                                     data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_2[j]},{filters_3[k]},{sort_by},{insight_type}.csv"), index=False)
@@ -1328,8 +1432,10 @@ class Traffic_Source_Details(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                            col_names.insert(1, f"{required_filter}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
+                                                    row.insert(1, f"{insight_type}")
                                                     data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_2[j]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -1350,8 +1456,10 @@ class Traffic_Source_Details(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                            col_names.insert(1, f"{required_filter}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
+                                                    row.insert(1, f"{insight_type}")
                                                     data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_2[j]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -1372,8 +1480,10 @@ class Traffic_Source_Details(Auth):
                                                 startDate=f"{self.start_date}"
                                         )
                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                        col_names.insert(1, f"{required_filter}")
                                         if len(response["rows"]) != 0:
                                             for row in response["rows"]:
+                                                row.insert(1, f"{insight_type}")
                                                 data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_2[j]},{sort_by},{insight_type}.csv"), index=False)
@@ -1393,8 +1503,10 @@ class Traffic_Source_Details(Auth):
                                                 startDate=f"{self.start_date}"
                                         )
                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                        col_names.insert(1, f"{required_filter}")
                                         if len(response["rows"]) != 0:
                                             for row in response["rows"]:
+                                                row.insert(1, f"{insight_type}")
                                                 data.append(row)
                                         response_df = pd.DataFrame(data=data, columns=col_names)
                                         response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_2[j]},{sort_by},{insight_type}.csv"), index=False)
@@ -1416,8 +1528,10 @@ class Traffic_Source_Details(Auth):
                                                     startDate=f"{self.start_date}"
                                             )
                                             col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                            col_names.insert(1, f"{required_filter}")
                                             if len(response["rows"]) != 0:
                                                 for row in response["rows"]:
+                                                    row.insert(1, f"{insight_type}")
                                                     data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
                                     response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_3[k]},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -1438,8 +1552,10 @@ class Traffic_Source_Details(Auth):
                                                 startDate=f"{self.start_date}"
                                         )
                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                        col_names.insert(1, f"{required_filter}")
                                         if len(response["rows"]) != 0:
                                             for row in response["rows"]:
+                                                row.insert(1, f"{insight_type}")
                                                 data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
                                     response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_3[k]},{sort_by},{insight_type}.csv"), index=False)
@@ -1460,8 +1576,10 @@ class Traffic_Source_Details(Auth):
                                                 startDate=f"{self.start_date}"
                                         )
                                         col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                        col_names.insert(1, f"{required_filter}")
                                         if len(response["rows"]) != 0:
                                             for row in response["rows"]:
+                                                row.insert(1, f"{insight_type}")
                                                 data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
                                     response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{filters_4[l]},{sort_by},{insight_type}.csv"), index=False)
@@ -1481,8 +1599,10 @@ class Traffic_Source_Details(Auth):
                                             startDate=f"{self.start_date}"
                                     )
                                     col_names = [col_header["name"] for col_header in response["columnHeaders"]]
+                                    col_names.insert(1, f"{required_filter}")
                                     if len(response["rows"]) != 0:
                                         for row in response["rows"]:
+                                            row.insert(1, f"{insight_type}")
                                             data.append(row)
                                     response_df = pd.DataFrame(data=data, columns=col_names)
                                     response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "traffic_source_details", f"{required_dimension},{sort_by},{insight_type}.csv"), index=False)
