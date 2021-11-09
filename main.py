@@ -11,7 +11,7 @@ def main():
 
     # Get all information to filter on 
     API_KEY = input("Please enter your API KEY: ").strip()
-    channel_id = "UCWPXl--e3JsJxRG64Of_msA" #input("Please enter your channel id: ").strip()
+    channel_id = input("Please enter your channel id: ").strip()
 
     YT = YT_ANALYTICS(API_KEY, channel_id)
     YT.get_filter_info()
@@ -31,9 +31,11 @@ def main():
             os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}", "clean", "playlist_reports", "csv", f"{category}"))
             os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}", "clean", "playlist_reports", "excel", f"{category}"))
     
+    
+    #Get the data
     start_time = time.time()
     curr_time = time.time()
-    """
+    
     YT.basic_user_activity_statistics()
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get basic_user_activity_statistics")
@@ -128,7 +130,7 @@ def main():
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get device_type")
     curr_time = end_time
-
+    
     YT.operating_system()
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get operating_system")
@@ -239,10 +241,16 @@ def main():
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get viewer_demographics_playlist")
     curr_time = end_time
-    """ 
+     
     YT.top_playlists()
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get top_playlists")
+    curr_time = end_time
+
+    #Clean the data
+    YT.clean_data()
+    end_time = time.time()
+    print(f"It took {timedelta(seconds=round(end_time - curr_time))} to clean data")
     finish_time = time.time()
     
     print(f"Program finished, your data has been cleaned! It has taken {timedelta(seconds=round(finish_time - start_time))}.")

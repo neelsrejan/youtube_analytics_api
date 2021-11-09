@@ -20,6 +20,7 @@ class Auth():
         return response
 
     def auth(self):
+        print("called")
         os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
         self.youtubeAnalytics = self.get_service()
     
