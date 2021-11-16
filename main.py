@@ -1,7 +1,8 @@
 import os
 import time
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 from YT_ANALYTICS import YT_ANALYTICS
+from channel_reports_variables import continents_rev_dict, subcontinents_rev_dict
 
 def main():
     
@@ -13,29 +14,46 @@ def main():
     API_KEY = input("Please enter your API KEY: ").strip()
     channel_id = input("Please enter your channel id: ").strip()
 
-    YT = YT_ANALYTICS(API_KEY, channel_id)
+    today = datetime.now()
+    date_time = today.strftime("%Y-%m-%dT%H-%M-%S")
+
+    YT = YT_ANALYTICS(API_KEY, channel_id, date_time)
     YT.get_filter_info()
     
     # Create directories for saving data into
-    if not os.path.exists(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}")):
+    if not os.path.exists(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{YT.date_time}")):
         data_categories_video = ["basic_user_activity_statistics", "basic_user_activity_in_US", "user_activity_by_location_over_time", "user_activity_in_US_over_time", "user_activity_by_location", "user_activity_in_US", "user_activity_by_location_over_subscribed_status", "user_activity_in_US_over_subscribed_status", "playback_details_by_location_over_liveOrOnDemand", "playback_details_by_location_over_time", "playback_details_by_country", "playback_details_by_country_averageViewPercentage", "playback_details_in_US", "playback_details_in_US_averageViewPercentage", "video_playback_by_location", "playback_location_details", "traffic_source", "traffic_source_details", "device_type", "operating_system", "operating_system_and_device_type", "viewer_demographics", "engagement_and_content_sharing", "audience_retention", "top_videos_regional", "top_videos_in_US", "top_videos_by_subscriber_type", "top_videos_by_yt_product", "top_videos_by_playback_details"]
         data_categories_playlist = ["basic_stats_playlist", "time_based_playlist", "activity_by_location_playlist", "activity_in_US_playlist", "playback_locations_playlist", "playback_locations_details_playlist", "traffic_sources_playlist", "traffic_sources_details_playlist", "device_type_playlist", "operating_system_playlist", "operating_system_and_device_type_playlist", "viewer_demographics_playlist", "top_playlists"]
         for category in data_categories_video:
-            os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", f"{category}"))
-            os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", f"{category}"))
-            os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}", "clean", "video_reports", "csv", f"{category}"))
-            os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}", "clean", "video_reports", "excel", f"{category}"))
+            os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{YT.date_time}", "raw", "video_reports", "csv", f"{category}"))
+            os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{YT.date_time}", "raw", "video_reports", "excel", f"{category}"))
+            os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{YT.date_time}", "clean", "video_reports", "csv", f"{category}"))
+            os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{YT.date_time}", "clean", "video_reports", "excel", f"{category}"))
         for category in data_categories_playlist:
-            os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", f"{category}"))
-            os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "excel", f"{category}"))
-            os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}", "clean", "playlist_reports", "csv", f"{category}"))
-            os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{date.today()}", "clean", "playlist_reports", "excel", f"{category}"))
+            os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{YT.date_time}", "raw", "playlist_reports", "csv", f"{category}"))
+            os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{YT.date_time}", "raw", "playlist_reports", "excel", f"{category}"))
+            os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{YT.date_time}", "clean", "playlist_reports", "csv", f"{category}"))
+            os.makedirs(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{YT.date_time}", "clean", "playlist_reports", "excel", f"{category}"))    
     
+    with open(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{YT.date_time}", "parameters.txt"), "w") as f:
+        f.write(f"The parameters for the request on {YT.date_time} are:\n\n")
+        f.write(f"The start date is: {YT.start_date}\n")
+        f.write(f"The end date is: {YT.end_date}\n")
+        if YT.has_countries:
+            f.write(f"The countries specified are: {YT.countries}\n")
+        if YT.has_continents:
+            to_write = [continents_rev_dict[continent] for continent in YT.continents]
+            f.write(f"The continents specified are: {to_write}\n")
+        if YT.has_subcontinents:
+            to_write = [subcontinents_rev_dict[subcontinent] for subcontinent in YT.subcontinents]
+            f.write(f"The subcontinents specified are: {to_write}\n")
+        if YT.has_provinces:
+            f.write(f"The provinces specified are: {YT.provinces}\n")
     
     #Get the data
     start_time = time.time()
     curr_time = time.time()
-    
+
     YT.basic_user_activity_statistics()
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get basic_user_activity_statistics")
@@ -246,7 +264,7 @@ def main():
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get top_playlists")
     curr_time = end_time
-
+    
     #Clean the data
     YT.clean_data()
     end_time = time.time()

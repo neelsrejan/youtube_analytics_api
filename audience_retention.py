@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-from datetime import date
 from auth import Auth
 
 class Audience_Retention(Auth):
@@ -47,8 +46,8 @@ class Audience_Retention(Auth):
                                                 row.insert(3, f"{yt_type}")
                                                 data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "audience_retention", f"{required_dimension},{vid_id},{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "audience_retention", f"{required_dimension},{vid_id},{filters_1[i]},{filters_2[j]},{filters_3[k]}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "video_reports", "csv", "audience_retention", f"{required_dimension},{vid_id},{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "video_reports", "excel", "audience_retention", f"{required_dimension},{vid_id},{filters_1[i]},{filters_2[j]},{filters_3[k]}.xlsx"), index=False)
                         elif i != 0 and j != 0 and k == 0:
                             data = []
                             col_names = None
@@ -72,8 +71,8 @@ class Audience_Retention(Auth):
                                             row.insert(2, f"{sub_type}")
                                             data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "audience_retention", f"{required_dimension},{vid_id},{filters_1[i]},{filters_2[j]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "audience_retention", f"{required_dimension},{vid_id},{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "video_reports", "csv", "audience_retention", f"{required_dimension},{vid_id},{filters_1[i]},{filters_2[j]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "video_reports", "excel", "audience_retention", f"{required_dimension},{vid_id},{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
                         elif i != 0 and j == 0 and k != 0:
                             data = []
                             col_names = None
@@ -97,8 +96,8 @@ class Audience_Retention(Auth):
                                             row.insert(2, f"{yt_type}")
                                             data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "audience_retention", f"{required_dimension},{vid_id},{filters_1[i]},{filters_3[k]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "audience_retention", f"{required_dimension},{vid_id},{filters_1[i]},{filters_3[k]}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "video_reports", "csv", "audience_retention", f"{required_dimension},{vid_id},{filters_1[i]},{filters_3[k]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "video_reports", "excel", "audience_retention", f"{required_dimension},{vid_id},{filters_1[i]},{filters_3[k]}.xlsx"), index=False)
                         elif i != 0 and j == 0 and k == 0:
                             data = []
                             col_names = None
@@ -119,8 +118,8 @@ class Audience_Retention(Auth):
                                         row.insert(1, f"{audience_type}")
                                         data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "audience_retention", f"{required_dimension},{vid_id},{filters_1[i]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "audience_retention", f"{required_dimension},{vid_id},{filters_1[i]}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "video_reports", "csv", "audience_retention", f"{required_dimension},{vid_id},{filters_1[i]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "video_reports", "excel", "audience_retention", f"{required_dimension},{vid_id},{filters_1[i]}.xlsx"), index=False)
                         elif i == 0 and j != 0 and k != 0:
                             data = []
                             col_names = None
@@ -144,8 +143,8 @@ class Audience_Retention(Auth):
                                             row.insert(2, f"{yt_type}")
                                             data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "audience_retention", f"{required_dimension},{vid_id},{filters_2[j]},{filters_3[k]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "audience_retention", f"{required_dimension},{vid_id},{filters_2[j]},{filters_3[k]}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "video_reports", "csv", "audience_retention", f"{required_dimension},{vid_id},{filters_2[j]},{filters_3[k]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "video_reports", "excel", "audience_retention", f"{required_dimension},{vid_id},{filters_2[j]},{filters_3[k]}.xlsx"), index=False)
                         elif i == 0 and j != 0 and k == 0:
                             data = []
                             col_names = None
@@ -166,8 +165,8 @@ class Audience_Retention(Auth):
                                         row.insert(1, f"{sub_type}")
                                         data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "audience_retention", f"{required_dimension},{vid_id},{filters_2[j]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "audience_retention", f"{required_dimension},{vid_id},{filters_2[j]}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "video_reports", "csv", "audience_retention", f"{required_dimension},{vid_id},{filters_2[j]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "video_reports", "excel", "audience_retention", f"{required_dimension},{vid_id},{filters_2[j]}.xlsx"), index=False)
                         elif i == 0 and j == 0 and k != 0:
                             data = []
                             col_names = None
@@ -188,8 +187,8 @@ class Audience_Retention(Auth):
                                         row.insert(1, f"{yt_type}")
                                         data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "audience_retention", f"{required_dimension},{vid_id},{filters_3[k]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "audience_retention", f"{required_dimension},{vid_id},{filters_3[k]}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "video_reports", "csv", "audience_retention", f"{required_dimension},{vid_id},{filters_3[k]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "video_reports", "excel", "audience_retention", f"{required_dimension},{vid_id},{filters_3[k]}.xlsx"), index=False)
                         elif i == 0 and j == 0 and k == 0:
                             data = []
                             col_names = None
@@ -207,7 +206,7 @@ class Audience_Retention(Auth):
                                 for row in response["rows"]:
                                     data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "csv", "audience_retention", f"{required_dimension},{vid_id}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "video_reports", "excel", "audience_retention", f"{required_dimension},{vid_id}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "video_reports", "csv", "audience_retention", f"{required_dimension},{vid_id}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "video_reports", "excel", "audience_retention", f"{required_dimension},{vid_id}.xlsx"), index=False)
         return
 

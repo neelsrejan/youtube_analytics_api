@@ -50,9 +50,10 @@ from clean_data import Clean_Data
 
 class YT_ANALYTICS(Filters, Basic_User_Activity_Statistics, Basic_User_Activity_In_US, User_Activity_By_Location_Over_Time, User_Activity_In_US_Over_Time, User_Activity_By_Location, User_Activity_In_US, User_Activity_By_Location_Over_Subscribed_Status, User_Activity_In_US_Over_Subscribed_Status, Playback_Details_By_Location_Over_LiveOrOnDemand, Playback_Details_By_Location_Over_Time, Playback_Details_By_Country, Playback_Details_By_Country_AverageViewPercentage, Playback_Details_In_US, Playback_Details_In_US_AverageViewPercentage, Video_Playback_By_Location, Playback_Location_Details, Traffic_Source, Traffic_Source_Details, Device_Type, Operating_System, Operating_System_And_Device_Type, Viewer_Demographics, Engagement_And_Content_Sharing, Audience_Retention, Top_Videos_Regional, Top_Videos_In_US, Top_Videos_By_Subscriber_Type, Top_Videos_By_YT_Product, Top_Videos_By_Playback_Details, Basic_Stats_Playlist, Time_Based_Playlist, Activity_By_Location_Playlist, Activity_In_US_Playlist, Playback_Locations_Playlist, Playback_Locations_Details_Playlist, Traffic_Sources_Playlist, Traffic_Sources_Details_Playlist, Device_Type_Playlist, Operating_System_Playlist, Operating_System_And_Device_Type_Playlist, Viewer_Demographics_Playlist, Top_Playlists, Clean_Data):
 
-    def __init__(self, API_KEY, channel_id):
+    def __init__(self, API_KEY, channel_id, date_time):
         self.API_KEY = API_KEY
         self.channel_id = channel_id
+        self.date_time = str(date_time)
         self.SCOPES = ["https://www.googleapis.com/auth/youtube",
             "https://www.googleapis.com/auth/youtube.readonly",
             "https://www.googleapis.com/auth/yt-analytics.readonly",
@@ -63,7 +64,6 @@ class YT_ANALYTICS(Filters, Basic_User_Activity_Statistics, Basic_User_Activity_
         self.API_VERSION = "v2"
         self.CLIENT_SECRETS_FILE = os.path.join(os.getcwd(), "secrets.json")
         super()
-        self.date = str(date.today())
         self.channel_name = None
         self.num_vids = None
         self.vid_ids = []

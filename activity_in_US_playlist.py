@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-from datetime import date
 from auth import Auth
 
 class Activity_In_US_Playlist(Auth):
@@ -46,8 +45,8 @@ class Activity_In_US_Playlist(Auth):
                                         for row in response["rows"]:
                                             data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.xlsx"), index=False)
                         elif filters_1[i] == "group":
                             data = []
                             col_names = None
@@ -67,8 +66,8 @@ class Activity_In_US_Playlist(Auth):
                                         for row in response["rows"]:
                                             data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.xlsx"), index=False)
                     elif i != 0 and j != 0 and k == 0:
                         if filters_1[i] == "playlist":
                             data = []
@@ -88,8 +87,8 @@ class Activity_In_US_Playlist(Auth):
                                     for row in response["rows"]:
                                         data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
                         elif filters_1[i] == "group":
                             data = []
                             col_names = None
@@ -108,8 +107,8 @@ class Activity_In_US_Playlist(Auth):
                                     for row in response["rows"]:
                                         data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_2[j]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_2[j]}.xlsx"), index=False)
                     elif i != 0 and j == 0 and k != 0:
                         if filters_1[i] == "playlist":
                             data = []
@@ -129,8 +128,8 @@ class Activity_In_US_Playlist(Auth):
                                     for row in response["rows"]:
                                         data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_3[k]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_3[k]}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_3[k]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_3[k]}.xlsx"), index=False)
                         elif filters_1[i] == "group":
                             data = []
                             col_names = None
@@ -149,8 +148,8 @@ class Activity_In_US_Playlist(Auth):
                                     for row in response["rows"]:
                                         data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_3[k]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_3[k]}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_3[k]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]},{filters_3[k]}.xlsx"), index=False)
                     elif i != 0 and j == 0 and k == 0:
                         if filters_1[i] == "playlist":
                             data = []
@@ -169,8 +168,8 @@ class Activity_In_US_Playlist(Auth):
                                 for row in response["rows"]:
                                     data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]}.xlsx"), index=False)
                         elif filters_1[i] == "group":
                             data = []
                             col_names = None
@@ -188,8 +187,8 @@ class Activity_In_US_Playlist(Auth):
                                 for row in response["rows"]:
                                     data.append(row)
                             response_df = pd.DataFrame(data=data, columns=col_names)
-                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]}.csv"), index=False)
-                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]}.xlsx"), index=False)
+                            response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]}.csv"), index=False)
+                            response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_1[i]}.xlsx"), index=False)
                     elif i == 0 and j != 0 and k != 0:
                         data = []
                         col_names = None
@@ -209,8 +208,8 @@ class Activity_In_US_Playlist(Auth):
                                     for row in response["rows"]:
                                         data.append(row)
                         response_df = pd.DataFrame(data=data, columns=col_names)
-                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_2[j]},{filters_3[k]}.csv"), index=False)
-                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_2[j]},{filters_3[k]}.xlsx"), index=False)
+                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_2[j]},{filters_3[k]}.csv"), index=False)
+                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_2[j]},{filters_3[k]}.xlsx"), index=False)
                     elif i == 0 and j != 0 and k == 0:
                         data = []
                         col_names = None
@@ -229,8 +228,8 @@ class Activity_In_US_Playlist(Auth):
                                 for row in response["rows"]:
                                     data.append(row)
                         response_df = pd.DataFrame(data=data, columns=col_names)
-                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_2[j]}.csv"), index=False)
-                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_2[j]}.xlsx"), index=False)
+                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_2[j]}.csv"), index=False)
+                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_2[j]}.xlsx"), index=False)
                     elif i == 0 and j == 0 and k != 0:
                         data = []
                         col_names = None
@@ -249,8 +248,8 @@ class Activity_In_US_Playlist(Auth):
                                 for row in response["rows"]:
                                     data.append(row)
                         response_df = pd.DataFrame(data=data, columns=col_names)
-                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_3[k]}.csv"), index=False)
-                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_3[k]}.xlsx"), index=False)
+                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension},{filters_3[k]}.csv"), index=False)
+                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension},{filters_3[k]}.xlsx"), index=False)
                     elif i == 0 and j == 0 and k == 0:
                         data = []
                         col_names = None
@@ -268,6 +267,6 @@ class Activity_In_US_Playlist(Auth):
                             for row in response["rows"]:
                                 data.append(row)
                         response_df = pd.DataFrame(data=data, columns=col_names)
-                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension}.csv"), index=False)
-                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{date.today()}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension}.xlsx"), index=False)
+                        response_df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "activity_in_US_playlist", f"{required_dimension}.csv"), index=False)
+                        response_df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "excel", "activity_in_US_playlist", f"{required_dimension}.xlsx"), index=False)
         return
