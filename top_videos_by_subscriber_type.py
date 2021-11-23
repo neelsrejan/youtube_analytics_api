@@ -6,7 +6,7 @@ class Top_Videos_By_Subscriber_Type(Auth):
 
     def top_videos_by_subscriber_type(self):
         metrics = ["views", "redViews", "likes", "dislikes", "videosAddedToPlaylists", "videosRemovedFromPlaylists", "shares", "estimatedMinutesWatched", "estimatedRedMinutesWatched", "averageViewDuration", "averageViewPercentage", "annotationClickThroughRate", "annotationCloseRate", "annotationImpressions", "annotationClickableImpressions", "annotationClosableImpressions", "annotationClicks", "annotationCloses", "cardClickRate", "cardTeaserClickRate", "cardImpressions", "cardTeaserImpressions", "cardClicks", "cardTeaserClicks"]
-        sorting_options = ["-views", "-redViews", "-estimatedMinutesWatched", "-estimatedRedMinutesWatched"]
+        sorting_options = ["-views"]
         required_dimension = "video"
         sub_status = ["SUBSCRIBED", "UNSUBSCRIBED"]
 

@@ -6,7 +6,7 @@ class Playback_Locations_Details_Playlist(Auth):
 
     def playback_locations_details_playlist(self):
         metrics = ["views", "estimatedMinutesWatched", "playlistStarts", "viewsPerPlaylistStart", "averageTimeInPlaylist"]
-        sorting_options = ["-views", "-estimatedMinutesWatched", "-playlistStarts"]
+        sorting_options = ["-views"]
         required_dimension = "insightPlaybackLocationDetail"
         required_filter = "isCurated==1;insightPlaybackLocationType==EMBEDDED"
         dimensions = ["", "day"]

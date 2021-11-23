@@ -6,7 +6,7 @@ class Top_Videos_By_YT_Product(Auth):
 
     def top_videos_by_yt_product(self):
         metrics = ["views", "redViews", "estimatedMinutesWatched", "estimatedRedMinutesWatched", "averageViewDuration", "averageViewPercentage"]
-        sorting_options = ["-views", "-redViews", "-estimatedMinutesWatched", "-estimatedRedMinutesWatched"]
+        sorting_options = ["-views"]
         required_dimension = "video" 
         sub_status = ["SUBSCRIBED", "UNSUBSCRIBED"]
         yt_status = ["CORE", "GAMING", "KIDS", "MUSIC"]

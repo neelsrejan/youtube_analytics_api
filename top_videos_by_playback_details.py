@@ -6,7 +6,7 @@ class Top_Videos_By_Playback_Details(Auth):
 
     def top_videos_by_playback_details(self):
         metrics = ["views", "redViews", "estimatedMinutesWatched", "estimatedRedMinutesWatched", "averageViewDuration"]
-        sorting_options = ["-views", "-redViews", "-estimatedMinutesWatched", "-estimatedRedMinutesWatched"]
+        sorting_options = ["-views"]
         required_dimension = "video"
         live_status = ["LIVE", "ON_DEMAND"]
         sub_status = ["SUBSCRIBED", "UNSUBSCRIBED"]

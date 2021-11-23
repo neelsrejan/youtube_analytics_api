@@ -10,7 +10,7 @@ class Top_Videos_In_US(Auth):
             return
 
         metrics = ["views", "redViews", "estimatedMinutesWatched", "estimatedRedMinutesWatched", "averageViewDuration", "averageViewPercentage", "annotationClickThroughRate", "annotationCloseRate", "annotationImpressions", "annotationClickableImpressions", "annotationClosableImpressions", "annotationClicks", "annotationCloses", "cardClickRate", "cardTeaserClickRate", "cardImpressions", "cardTeaserImpressions", "cardClicks", "cardTeaserClicks"]
-        sorting_options = ["-views", "-redViews", "-estimatedMinutesWatched", "-estimatedRedMinutesWatched"]
+        sorting_options = ["-views"]
         required_dimension = "video"
         required_filter = "province"
         sub_status = ["SUBSCRIBED", "UNSUBSCRIBED"]

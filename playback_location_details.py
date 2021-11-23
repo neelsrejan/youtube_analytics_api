@@ -8,7 +8,7 @@ class Playback_Location_Details(Auth):
         metrics = ["views", "estimatedMinutesWatched"]
         required_dimension = "insightPlaybackLocationDetail"
         required_filter = "insightPlaybackLocationType==EMBEDDED"
-        sorting_options = ["-views", "-estimatedMinutesWatched"]
+        sorting_options = ["-views"]
         live_status = ["LIVE", "ON_DEMAND"]
         sub_status = ["SUBSCRIBED", "UNSUBSCRIBED"]
 

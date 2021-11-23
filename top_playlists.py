@@ -6,7 +6,7 @@ class Top_Playlists(Auth):
 
     def top_playlists(self):
         metrics = ["views", "redViews", "estimatedMinutesWatched", "estimatedRedMinutesWatched", "averageViewDuration", "playlistStarts", "viewsPerPlaylistStart", "averageTimeInPlaylist"]
-        sorting_options = ["-views", "-redViews", "-estimatedMinutesWatched", "-estimatedRedMinutesWatched", "-playlistStarts"]
+        sorting_options = ["-views"]
         required_dimension = "playlist"
         required_filter = "isCurated==1"
         sub_status = ["SUBSCRIBED", "UNSUBSCRIBED"]

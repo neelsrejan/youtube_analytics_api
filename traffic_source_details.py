@@ -8,7 +8,7 @@ class Traffic_Source_Details(Auth):
         metrics = ["views", "estimatedMinutesWatched"]
         required_dimension = "insightTrafficSourceDetail"
         required_filter = "insightTrafficSourceType"
-        sorting_options = ["-views", "-estimatedMinutesWatched"]
+        sorting_options = ["-views"]
         live_status = ["LIVE", "ON_DEMAND"]
         sub_status = ["SUBSCRIBED", "UNSUBSCRIBED"]
         insight_types = ["ADVERTISING", "EXT_URL", "RELATED_VIDEO", "SUBSCRIBER", "YT_CHANNEL", "YT_OTHER_PAGE", "YT_SEARCH"]
