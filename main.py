@@ -19,17 +19,10 @@ def main():
 
     YT = YT_ANALYTICS(API_KEY, channel_id, date_time)
     YT.get_filter_info()
-   
-    YT.date_time = "2021-11-20T21-43-56"
-    YT.has_countries = True
-    YT.countries = ["US", "GB", "IN"]
-    YT.has_continents = True
-    YT.continents = ["019", "142", "150"]
-    YT.has_subcontinents = True
-    YT.subcontinents = ["021", "005", "035", "151"]
-    YT.has_provinces = True
-    YT.provinces = ["US-CA", "US-NY", "US-TX"]
-    """  
+    
+    # In case you the program crashes and need to restart the program and save files into the same folder add the correct datetime as noted on the folder name
+    #YT.date_time = "2021-11-23T09-44-55"
+      
     # Create directories for saving data into
     if not os.path.exists(os.path.join(os.getcwd(), f"{YT.channel_name}_data", f"{YT.date_time}")):
         data_categories_video = ["basic_user_activity_statistics", "basic_user_activity_in_US", "user_activity_by_location_over_time", "user_activity_in_US_over_time", "user_activity_by_location", "user_activity_in_US", "user_activity_by_location_over_subscribed_status", "user_activity_in_US_over_subscribed_status", "playback_details_by_location_over_liveOrOnDemand", "playback_details_by_location_over_time", "playback_details_by_country", "playback_details_by_country_averageViewPercentage", "playback_details_in_US", "playback_details_in_US_averageViewPercentage", "video_playback_by_location", "playback_location_details", "traffic_source", "traffic_source_details", "device_type", "operating_system", "operating_system_and_device_type", "viewer_demographics", "engagement_and_content_sharing", "audience_retention", "top_videos_regional", "top_videos_in_US", "top_videos_by_subscriber_type", "top_videos_by_yt_product", "top_videos_by_playback_details"]
@@ -59,11 +52,11 @@ def main():
             f.write(f"The subcontinents specified are: {to_write}\n")
         if YT.has_provinces:
             f.write(f"The provinces specified are: {YT.provinces}\n")
-    """
+    
     #Get the data
     start_time = time.time()
     curr_time = time.time()
-    """
+    
     YT.basic_user_activity_statistics()
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get basic_user_activity_statistics")
@@ -244,12 +237,12 @@ def main():
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get traffic_sources_playlist")
     curr_time = end_time
-    """
+    
     YT.traffic_sources_details_playlist()
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get traffic_sources_details_playlist")
     curr_time = end_time
-    
+     
     YT.device_type_playlist() 
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get device_type_playlist")
