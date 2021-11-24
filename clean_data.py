@@ -241,8 +241,8 @@ class Clean_Data():
                     col = df[f"{cols_to_swap[i]}"]
                     df.drop(labels=[f"{cols_to_swap[i]}"], axis=1, inplace=True)
                     df.insert(i+1, f"{cols_to_swap[i]}", col)
-            df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "video_reports", "csv", "user_activity_by_location_over_time", "user_activity_by_location_over_time.csv"), index=False, na_rep="NULL")
-            df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "video_reports", "excel", "user_activity_by_location_over_time", "user_activity_by_location_over_time.xlsx"), index=False, na_rep="NULL")
+            df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "video_reports", "csv", "user_activity_by_location_over_time", f"user_activity_by_location_over_time_by_{dimension}.csv"), index=False, na_rep="NULL")
+            df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "video_reports", "excel", "user_activity_by_location_over_time", f"user_activity_by_location_over_time_by_{dimension}.xlsx"), index=False, na_rep="NULL")
 
     def clean_user_activity_in_US_over_time(self):
 
@@ -276,8 +276,8 @@ class Clean_Data():
                 col = df[f"{cols_to_swap[i]}"]
                 df.drop(labels=[f"{cols_to_swap[i]}"], axis=1, inplace=True)
                 df.insert(i+2, f"{cols_to_swap[i]}", col)
-            df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "video_reports", "csv", "user_activity_in_US_over_time", "user_activity_in_US_over_time.csv"), index=False, na_rep="NULL")
-            df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "video_reports", "excel", "user_activity_in_US_over_time", "user_activity_in_US_over_time.xlsx"), index=False, na_rep="NULL")
+            df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "video_reports", "csv", "user_activity_in_US_over_time", f"user_activity_in_US_over_time_by_{dimension}.csv"), index=False, na_rep="NULL")
+            df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "video_reports", "excel", "user_activity_in_US_over_time", f"user_activity_in_US_over_time_by_{dimension}.xlsx"), index=False, na_rep="NULL")
 
     def clean_user_activity_by_location(self):
 
@@ -4432,11 +4432,11 @@ class Clean_Data():
                         df.drop(labels=[f"{cols_to_swap[i]}"], axis=1, inplace=True)
                         df.insert(i+1, f"{cols_to_swap[i]}", col)
             if dimension == "ageGroup,gender":
+                df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "video_reports", "csv", "viewer_demographics", f"viewer_demographics_by_{dimension.replace(',', '_and_')}.csv"), index=False, na_rep="NULL")
+                df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "video_reports", "excel", "viewer_demographics", f"viewer_demographics_by_{dimension.replace(',', '_and_')}.xlsx"), index=False, na_rep="NULL")
+            else:
                 df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "video_reports", "csv", "viewer_demographics", f"viewer_demographics_by_{dimension}.csv"), index=False, na_rep="NULL")
                 df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "video_reports", "excel", "viewer_demographics", f"viewer_demographics_by_{dimension}.xlsx"), index=False, na_rep="NULL")
-            else:
-                df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "video_reports", "csv", "viewer_demographics", "viewer_demographics.csv"), index=False, na_rep="NULL")
-                df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "video_reports", "excel", "viewer_demographics", "viewer_demographics.xlsx"), index=False, na_rep="NULL")
 
     def clean_engagement_and_content_sharing(self):
 
@@ -5149,7 +5149,7 @@ class Clean_Data():
             filters_to_remove_2.append("group")
 
         required_filter = "isCurated==1"
-        dimensions = ["", "day", "month"]
+        dimensions = ["day", "month"]
         filters_1 = ["", "country", "province", "continent", "subContinent"]
         filters_2 = ["", "playlist", "group"]
         filters_3 = ["", "subscribedStatus"]
@@ -5168,145 +5168,67 @@ class Clean_Data():
                     for k in range(len(filters_3)):
                         for l in range(len(filters_4)):
                             if i != 0 and j != 0 and k != 0 and l != 0:
-                                if dimension == "day" or dimension == "month":
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
-                                else:
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
+                                to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]},{filters_4[l]}.csv"))
+                                merge_on = list(to_merge.columns)
+                                df = df.merge(to_merge, how="outer", on=merge_on)
                             elif i != 0 and j != 0 and k != 0 and l == 0:
-                                if dimension == "day" or dimension == "month":
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
-                                else:
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
+                                to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_1[i]},{filters_2[j]},{filters_3[k]}.csv"))
+                                merge_on = list(to_merge.columns)
+                                df = df.merge(to_merge, how="outer", on=merge_on)
                             elif i != 0 and j != 0 and k == 0 and l != 0:
-                                if dimension == "day" or dimension == "month":
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
-                                else:
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{filters_1[i]},{filters_2[j]},{filters_4[l]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
+                                to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_1[i]},{filters_2[j]},{filters_4[l]}.csv"))
+                                merge_on = list(to_merge.columns)
+                                df = df.merge(to_merge, how="outer", on=merge_on)
                             elif i != 0 and j != 0 and k == 0 and l == 0:
-                                if dimension == "day" or dimension == "month":
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_1[i]},{filters_2[j]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
-                                else:
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{filters_1[i]},{filters_2[j]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
+                                to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_1[i]},{filters_2[j]}.csv"))
+                                merge_on = list(to_merge.columns)
+                                df = df.merge(to_merge, how="outer", on=merge_on)
                             elif i != 0 and j == 0 and k != 0 and l != 0:
-                                if dimension == "day" or dimension == "month":
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
-                                else:
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{filters_1[i]},{filters_3[k]},{filters_4[l]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
+                                to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_1[i]},{filters_3[k]},{filters_4[l]}.csv"))
+                                merge_on = list(to_merge.columns)
+                                df = df.merge(to_merge, how="outer", on=merge_on)
                             elif i != 0 and j == 0 and k != 0 and l == 0:
-                                if dimension == "day" or dimension == "month":
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_1[i]},{filters_3[k]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
-                                else:
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{filters_1[i]},{filters_3[k]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
+                                to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_1[i]},{filters_3[k]}.csv"))
+                                merge_on = list(to_merge.columns)
+                                df = df.merge(to_merge, how="outer", on=merge_on)
                             elif i != 0 and j == 0 and k == 0 and l != 0:
-                                if dimension == "day" or dimension == "month":
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_1[i]},{filters_4[l]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
-                                else:
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{filters_1[i]},{filters_4[l]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
+                                to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_1[i]},{filters_4[l]}.csv"))
+                                merge_on = list(to_merge.columns)
+                                df = df.merge(to_merge, how="outer", on=merge_on)
                             elif i != 0 and j == 0 and k == 0 and l == 0:
-                                if dimension == "day" or dimension == "month":
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_1[i]}.csv"))
-                                    merge_on = [list(to_merge.columns)[0]] + list(to_merge.columns)[2:]
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
-                                else:
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{filters_1[i]}.csv"))
-                                    merge_on = list(to_merge.columns)[1:]
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
+                                to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_1[i]}.csv"))
+                                merge_on = [list(to_merge.columns)[0]] + list(to_merge.columns)[2:]
+                                df = df.merge(to_merge, how="outer", on=merge_on)
                             elif i == 0 and j != 0 and k != 0 and l != 0:
-                                if dimension == "day" or dimension == "month":
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_2[j]},{filters_3[k]},{filters_4[l]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
-                                else:
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{filters_2[j]},{filters_3[k]},{filters_4[l]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
+                                to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_2[j]},{filters_3[k]},{filters_4[l]}.csv"))
+                                merge_on = list(to_merge.columns)
+                                df = df.merge(to_merge, how="outer", on=merge_on)
                             elif i == 0 and j != 0 and k != 0 and l == 0:
-                                if dimension == "day" or dimension == "month":
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_2[j]},{filters_3[k]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
-                                else:
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{filters_2[j]},{filters_3[k]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
+                                to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_2[j]},{filters_3[k]}.csv"))
+                                merge_on = list(to_merge.columns)
+                                df = df.merge(to_merge, how="outer", on=merge_on)
                             elif i == 0 and j != 0 and k == 0 and l != 0:
-                                if dimension == "day" or dimension == "month":
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_2[j]},{filters_4[l]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
-                                else:
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{filters_2[j]},{filters_4[l]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
+                                to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_2[j]},{filters_4[l]}.csv"))
+                                merge_on = list(to_merge.columns)
+                                df = df.merge(to_merge, how="outer", on=merge_on)
                             elif i == 0 and j != 0 and k == 0 and l == 0:
-                                if dimension == "day" or dimension == "month":
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_2[j]}.csv"))
-                                    merge_on = [list(to_merge.columns)[0]] + list(to_merge.columns)[2:]
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
-                                else:
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{filters_2[j]}.csv"))
-                                    merge_on = list(to_merge.columns)[1:]
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
+                                to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_2[j]}.csv"))
+                                merge_on = [list(to_merge.columns)[0]] + list(to_merge.columns)[2:]
+                                df = df.merge(to_merge, how="outer", on=merge_on)
                             elif i == 0 and j == 0 and k != 0 and l != 0:
-                                if dimension == "day" or dimension == "month":
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_3[k]},{filters_4[l]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
-                                else:
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{filters_3[k]},{filters_4[l]}.csv"))
-                                    merge_on = list(to_merge.columns)
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
+                                to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_3[k]},{filters_4[l]}.csv"))
+                                merge_on = list(to_merge.columns)
+                                df = df.merge(to_merge, how="outer", on=merge_on)
                             elif i == 0 and j == 0 and k != 0 and l == 0:
-                                if dimension == "day" or dimension == "month":
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_3[k]}.csv"))
-                                    merge_on = [list(to_merge.columns)[0]] + list(to_merge.columns)[2:]
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
-                                else:
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{filters_3[k]}.csv"))
-                                    merge_on = list(to_merge.columns)[1:]
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
+                                to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_3[k]}.csv"))
+                                merge_on = [list(to_merge.columns)[0]] + list(to_merge.columns)[2:]
+                                df = df.merge(to_merge, how="outer", on=merge_on)
                             elif i == 0 and j == 0 and k == 0 and l != 0:
-                                if dimension == "day" or dimension == "month":
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_4[l]}.csv"))
-                                    merge_on = [list(to_merge.columns)[0]] + list(to_merge.columns)[2:]
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
-                                else:
-                                    to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{filters_4[l]}.csv"))
-                                    merge_on = list(to_merge.columns)[1:]
-                                    df = df.merge(to_merge, how="outer", on=merge_on)
+                                to_merge = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension},{filters_4[l]}.csv"))
+                                merge_on = [list(to_merge.columns)[0]] + list(to_merge.columns)[2:]
+                                df = df.merge(to_merge, how="outer", on=merge_on)
                             elif i == 0 and j == 0 and k == 0 and l == 0:
-                                if dimension == "day" or dimension == "month":
-                                    df = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension}.csv"))
-                                else:
-                                    df = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", "unfiltered.csv"))
+                                df = pd.read_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "raw", "playlist_reports", "csv", "time_based_playlist", f"{dimension}.csv"))
 
             cols_to_swap = filters_4[1:] + filters_3[1:] + filters_2[1:] + filters_1[1:]
             for i in range(len(cols_to_swap)):
@@ -5380,12 +5302,8 @@ class Clean_Data():
                         col = df[f"{cols_to_swap[i]}"]
                         df.drop(labels=[f"{cols_to_swap[i]}"], axis=1, inplace=True)
                         df.insert(i, f"{cols_to_swap[i]}", col)
-            if dimension == "day" or dimension == "month":
-                df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "playlist_reports", "csv", "time_based_playlist", f"time_based_playlist_by_{dimension}.csv"), index=False, na_rep="NULL")
-                df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "playlist_reports", "excel", "time_based_playlist", f"time_based_playlist_by_{dimension}.xlsx"), index=False, na_rep="NULL")
-            else:
-                df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "playlist_reports", "csv", "time_based_playlist", "time_based_playlist.csv"), index=False, na_rep="NULL")
-                df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "playlist_reports", "excel", "time_based_playlist", "time_based_playlist.xlsx"), index=False, na_rep="NULL")
+            df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "playlist_reports", "csv", "time_based_playlist", f"time_based_playlist_by_{dimension}.csv"), index=False, na_rep="NULL")
+            df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "playlist_reports", "excel", "time_based_playlist", f"time_based_playlist_by_{dimension}.xlsx"), index=False, na_rep="NULL")
 
     def clean_activity_by_location_playlist(self):
 
@@ -7242,8 +7160,12 @@ class Clean_Data():
                         col = df[f"{cols_to_swap[i]}"]
                         df.drop(labels=[f"{cols_to_swap[i]}"], axis=1, inplace=True)
                         df.insert(i+4, f"{cols_to_swap[i]}", col)
-            df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "playlist_reports", "csv", "viewer_demographics_playlist", "viewer_demographics_playlist.csv"), index=False, na_rep="NULL")
-            df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "playlist_reports", "excel", "viewer_demographics_playlist", "viewer_demographics_playlist.xlsx"), index=False, na_rep="NULL")
+            if dimension == "ageGroup,gender":
+                df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "playlist_reports", "csv", "viewer_demographics_playlist", f"viewer_demographics_playlist_by_{dimension.replace(',', '_and_')}.csv"), index=False, na_rep="NULL")
+                df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "playlist_reports", "excel", "viewer_demographics_playlist", f"viewer_demographics_playlist_by_{dimension.replace(',', '_and_')}.xlsx"), index=False, na_rep="NULL")
+            else:
+                df.to_csv(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "playlist_reports", "csv", "viewer_demographics_playlist", f"viewer_demographics_playlist_by_{dimension}.csv"), index=False, na_rep="NULL")
+                df.to_excel(os.path.join(os.getcwd(), f"{self.channel_name}_data", f"{self.date_time}", "clean", "playlist_reports", "excel", "viewer_demographics_playlist", f"viewer_demographics_playlist_by_{dimension}.xlsx"), index=False, na_rep="NULL")
 
     def clean_top_playlists(self):
 

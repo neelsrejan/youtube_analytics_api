@@ -61,7 +61,7 @@ def main():
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get basic_user_activity_statistics")
     curr_time = end_time
-
+    
     YT.basic_user_activity_in_US()
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get basic_user_activity_in_US")
@@ -76,7 +76,7 @@ def main():
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get user_activity_in_US_over_time")
     curr_time = end_time
-
+    
     YT.user_activity_by_location()
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get user_activity_by_location")
@@ -86,7 +86,7 @@ def main():
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get user_activity_in_US")
     curr_time = end_time
-
+    
     YT.user_activity_by_location_over_subscribed_status()
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get user_activity_by_location_over_subscribed_status")
@@ -96,7 +96,7 @@ def main():
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get user_activity_in_US_over_subscribed_status")
     curr_time = end_time
-
+    
     YT.playback_details_by_location_over_liveOrOnDemand()
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get playback_details_by_location_over_liveOrOnDemand")    
@@ -106,7 +106,7 @@ def main():
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get playback_details_by_location_over_time")
     curr_time = end_time
-
+    
     YT.playback_details_by_country()
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get playback_details_by_country")
@@ -161,12 +161,12 @@ def main():
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get operating_system_and_device_type")
     curr_time = end_time
-
+    
     YT.viewer_demographics()
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get viewer_demographics")
     curr_time = end_time
-
+    
     YT.engagement_and_content_sharing()
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get engagement_and_content_sharing")
@@ -257,17 +257,17 @@ def main():
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get operating_system_and_device_type_playlist")
     curr_time = end_time
-
+    
     YT.viewer_demographics_playlist()
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get viewer_demographics_playlist")
     curr_time = end_time
-     
+    
     YT.top_playlists()
     end_time = time.time()
     print(f"It took {timedelta(seconds=round(end_time - curr_time))} to get top_playlists")
     curr_time = end_time
-
+       
     #Clean the data
     YT.clean_data()
     end_time = time.time()
