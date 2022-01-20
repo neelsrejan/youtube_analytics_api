@@ -1,7 +1,8 @@
 # Welcome to the Youtube Analytics API
 
 ## Check out the final report
-https://public.tableau.com/views/ConceptNewEraAnalytics/FullAnalyis?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
+Tableau (dynamic, recommended): https://public.tableau.com/views/ConceptNewEraAnalytics/FullAnalyis?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
+PDF (not dynamic, not recommended) : Concept_New_Era_Analysis.pdf found above
 
 ## Abstract
 This program is for any youtuber who wishes to get targeted, specific information about their youtube channel. The progam is able to aggregate data for tons of metrics that the youtube creator studio is not able to aggregate from its reports. The program will ask the user if they wish to get information on the lengh of the time the channel has been up or specific dates they wish to analyze. In addition it will ask for specific countries, provinces, continents, or subcontinents that the user wishes to filter results on. The user simply needs a google console account and project dedicated to using the Youtube Analytics Api as well as the Youtube Data Api with a secret.json file as the OAuth file given through correct setup of the credentials and an API Key from the youtube Data api. With this, the user just needs python on their computer to get all the data they wish. 
